@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Legal Research Assistant</title>
+		<link rel="stylesheet" href="css/login-style.css">
+		<link rel="stylesheet" href="css/themify-icons.css">
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+		
+		<!-- bootstrap js -->		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.bundle.js"></script> 
+		
+		<!-- Google Red Hat Display -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+		
+		<!-- Fontawesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="js/common.js"></script>
+
+		<script>
+
+			$(document).ready(function () {
+
+				$("#btnLogin").click(function () {
+					var aUsrId = $("#txtUsrId").val();
+					var aPwd = $("#txtPwd").val();
+
+					if (aUsrId != "" || aPwd != "") {
+						//Login API/Logic
+						var IsValid = false;
+						$.each(UserList, function (i, user) {
+							if (aUsrId == user.email && aPwd == user.password) {
+								IsValid = true;
+								return;
+							}
+						});
+
+						if (IsValid) {
+							setCookie("user-id", aUsrId);
+							location.href = "Home.html";
+						}
+						else {
+							alert("Invalid Credential");
+						}
+					}
+					else {
+						alert("Enter Credentials");
+					}
+
+				});
+
+			});
+
+
+
+          
+
+		</script>
+
+
+		
+	</head>
+	<body>
+		<div class="wrapper-login">
+			<div class="login-wrapper">
+				<div class="login-hold-inn">
+					<div class="login-area-hold">
+						<div class="logo-sec">
+							<img src="images/logo-application.png" alt="Legal Research Assistant" class="login-logo">
+						</div>
+						
+						<div class="cred-details">
+							<div class="row-hold">
+								<div class="form-group chm-formgroup">																		
+									<input type="text" class="form-control chm-forminput" id="txtUsrId" placeholder="User Name" value="">
+								</div>
+							</div>
+							
+							<div class="row-hold">
+								<div class="form-group chm-formgroup">																		
+									<input type="password" class="form-control chm-forminput" id="txtPwd" placeholder="Password" value="">
+								</div>
+							</div>
+							
+							<div class="row-hold">
+								<a href="#" class="textlink-sm">Forgot Password?</a>
+							</div>
+							
+							<div class="row-hold">
+								<a href="#"  class="btn btn-primary button-blue"  id="btnLogin" >login</a>
+							</div>
+							
+							<div class="row-hold">
+								<p class="inline-signup">Don't have an account? <a href="#" class="textlink-md">Sign Up</a></p>
+							</div>
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

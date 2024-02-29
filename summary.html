@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Legal Research Assistant</title>
+    <link rel="stylesheet" href="css/common-style.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+
+    <!-- bootstrap js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <!-- Google Red Hat Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Multi Select css and JS -->
+    <script
+      type="text/javascript"
+      src="assets/js/bootstrap-multiselect.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="css/bootstrap-multiselect.css"
+      type="text/css"
+    />
+
+    <!-- Data table code -->
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="app-container">
+        <header class="header-fixed nav-bar-head">
+          <div class="logo-account-hold">
+            <div class="left-app-logo">
+              <img
+                src="images/logo-application.png"
+                alt="Legal Research Assistant"
+                title="Legal Research Assistant"
+                class="logo-main"
+              />
+              <img
+                src="images/wipro-logo.png"
+                alt="Wipro"
+                title="Wipro"
+                class="logo-parent"
+              />
+            </div>
+            <div class="right-app-account">
+              <div class="notify-hold user-hold">
+                <div class="user-sec">
+                  <div class="account-right">
+                    <ul>
+                      <li>
+                        <ul id="menu-log">
+                          <li>
+                            <input id="check01" type="checkbox" name="menu" />
+                            <label for="check01"
+                              ><span class="uname-dp">AB</span>Aditya
+                              Bhuvan</label
+                            >
+                            <ul class="submenu">
+                              <li><div class="submenu-dp">AB</div></li>
+                              <li>
+                                <a href="profile.html"
+                                  ><span
+                                    ><i
+                                      class="fa fa-user"
+                                      aria-hidden="true"
+                                    ></i></span
+                                  >My Profile</a
+                                >
+                              </li>
+                              <li>
+                                <a href="login.html"
+                                  ><span
+                                    ><i
+                                      class="fa fa-sign-out"
+                                      aria-hidden="true"
+                                    ></i></span
+                                  >Logout</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- right-app-account -->
+          </div>
+          <!-- logo-account-hold -->
+          <div class="main-menu-section">
+            <ul class="nav-dark">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="dashboard.html" class="">Dashboard</a></li>
+              <li><a href="summary.html" class="active">Summary</a></li>
+            </ul>
+          </div>
+        </header>
+
+        <main class="body-wrapper">
+          <div class="content-wrapper right-main-containr">
+            <h2 class="page-head">Summary</h2>
+            <div class="main-data-hold">
+              <div class="app-main-wrapper">
+                <div class="inn-main-hold">
+                  <div class="section-wrapper">
+                    <div class="section-content">
+                      <div class="upload-main-wrapper">
+                        <div class="uploadFile-left">
+                          <div class="file-upload">
+                            <button
+                              class="file-upload-btn"
+                              type="button"
+                              onclick="$('.file-upload-input').trigger( 'click' )"
+                            >
+                              Upload PDF
+                            </button>
+
+                            <div class="image-upload-wrap">
+                              <!-- <input
+                                class="file-upload-input"
+                                type="file"
+                                id="pdfFile"
+                                onchange="readURL(this);"
+                                accept="application/pdf"
+                              /> -->
+                              <input
+                                type="file"
+                                class="file-upload-input"
+                                id="pdfFile"
+                                accept="application/pdf"
+                                onchange="uploadFile()"
+                              />
+                              <div class="drag-text">
+                                <h3>Drag and drop a file or select add PDF</h3>
+                              </div>
+                            </div>
+
+                            <div class="file-upload-content">
+                              <img
+                                class="file-upload-image"
+                                src="#"
+                                alt="your image"
+                              />
+                              <div class="image-title-wrap">
+                                <button
+                                  type="button"
+                                  onclick="removeUpload()"
+                                  class="remove-image"
+                                >
+                                  Remove
+                                  <span class="image-title"
+                                    >Uploaded Image</span
+                                  >
+                                </button>
+                              </div>
+                            </div>
+                            <p id="fileName"></p>
+                          </div>
+                        </div>
+                        <div class="fileReview-right d-none">
+                          <div class="bg-white-hold">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <table
+                                  id="employeemaster"
+                                  class="table table-bordered table-striped table-cust-new d-table dataTableRule"
+                                >
+                                  <thead>
+                                    <tr>
+                                      <th class="thd-w10">
+                                        <span>Sl.No.</span>
+                                      </th>
+                                      <th class="thd-w60">
+                                        <span>File Name</span>
+                                      </th>
+                                      <th class="thd-w20">
+                                        <span>Uploaded Date</span>
+                                      </th>
+                                      <th class="thd-w10">
+                                        <span>Action</span>
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td><span>1</span></td>
+                                      <td>
+                                        <span>leagalsummarysample.pdf</span>
+                                      </td>
+                                      <td><span>15-02-2024</span></td>
+                                      <td>
+                                        <div class="TBL-actions">
+                                          <ul class="action-icons">
+                                            <li>
+                                              <a
+                                                href="add-admin.html"
+                                                class="btn-icon-action btn-icon-edit"
+                                                ><span
+                                                  data-toggle="tooltip"
+                                                  title="Download"
+                                                  class="ti-download action-temify"
+                                                ></span
+                                              ></a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="#"
+                                                class="btn-icon-action btn-icon-cancel"
+                                                ><span
+                                                  data-toggle="tooltip"
+                                                  title="Remove"
+                                                  class="ti-trash action-temify"
+                                                ></span
+                                              ></a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>2</span></td>
+                                      <td>
+                                        <span
+                                          >lorumipsumleagalsummarysample.pdf</span
+                                        >
+                                      </td>
+                                      <td><span>12-02-2024</span></td>
+                                      <td>
+                                        <div class="TBL-actions">
+                                          <ul class="action-icons">
+                                            <li>
+                                              <a
+                                                href="add-admin.html"
+                                                class="btn-icon-action btn-icon-edit"
+                                                ><span
+                                                  data-toggle="tooltip"
+                                                  title="Download"
+                                                  class="ti-download action-temify"
+                                                ></span
+                                              ></a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="#"
+                                                class="btn-icon-action btn-icon-cancel"
+                                                ><span
+                                                  data-toggle="tooltip"
+                                                  title="Remove"
+                                                  class="ti-trash action-temify"
+                                                ></span
+                                              ></a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>3</span></td>
+                                      <td>
+                                        <span
+                                          >lorumipsumleagalsummarysample.pdf</span
+                                        >
+                                      </td>
+                                      <td><span>12-02-2024</span></td>
+                                      <td>
+                                        <div class="TBL-actions">
+                                          <ul class="action-icons">
+                                            <li>
+                                              <a
+                                                href="add-admin.html"
+                                                class="btn-icon-action btn-icon-edit"
+                                                ><span
+                                                  data-toggle="tooltip"
+                                                  title="Download"
+                                                  class="ti-download action-temify"
+                                                ></span
+                                              ></a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="#"
+                                                class="btn-icon-action btn-icon-cancel"
+                                                ><span
+                                                  data-toggle="tooltip"
+                                                  title="Remove"
+                                                  class="ti-trash action-temify"
+                                                ></span
+                                              ></a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Testing summary -->
+                        <div class="fileReview-right">
+                          <div class="d-flex summary px-5">
+                            <div
+                              class="box-gen align-items-center justify-content-center"
+                              id="summary"
+                            >
+                              <h3>Generating summary&nbsp;</h3>
+                              <div class="loader"></div>
+                            </div>
+                            <div class="box2" id="divSummary">
+                              <div class="d-flex summary flex-column">
+                                <h3 style="text-align: center">Summary</h3>
+                                <div class="row px-3 py-2 text-white">
+                                  <p class="word"></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Testing summary ends -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- inn-main-hold -->
+              </div>
+              <!-- app-main-wrapper -->
+            </div>
+            <footer class="tne-app-footer">
+              <div class="footer-custom">
+                <p>Copyright &copy; 2021-2022. All rights reserved.</p>
+                <p><span class="mr-2">WIPRO Legal Research Assistant</span></p>
+              </div>
+            </footer>
+          </div>
+          <!-- right-main-containr -->
+        </main>
+      </div>
+    </div>
+
+    <script>
+      var file = "";
+
+      $(document).ready(function () {
+        $("#summary").hide();
+        $("#divSummary").hide();
+      });
+
+      function uploadFile() {
+        var fileInput = document.getElementById("pdfFile");
+        var file = fileInput.files[0];
+        file = file.name;
+        document.getElementById("fileName").innerText = file;
+        var formData = new FormData();
+        formData.append("pdfFile", file);
+        alert("file uploaded");
+
+        $("#summary").show();
+        $("#summary").addClass("d-flex");
+        // var id = document.getElementById("summary");
+        // id.classList.remove("d-none");
+        // id.classList.add("d-flex");
+
+        $.ajax({
+          url: "http://127.0.0.1:4000/summary",
+          type: "POST",
+          data: formData,
+          processData: false, // tell jQuery not to process the data
+          contentType: false,
+          success: function (data) {
+            console.log("Upload successful!");
+            $("#summary").removeClass("d-flex");
+            $("#summary").hide();
+
+            $("#divSummary").show();
+            $("#divSummary p").html(data);
+          },
+          error: function () {
+            console.log("Upload error!");
+          },
+        });
+      }
+
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $(".image-upload-wrap").hide();
+
+            $(".file-upload-image").attr("src", e.target.result);
+            $(".file-upload-content").show();
+
+            $(".image-title").html(input.files[0].name);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        } else {
+          removeUpload();
+        }
+      }
+
+      function removeUpload() {
+        $(".file-upload-input").replaceWith($(".file-upload-input").clone());
+        $(".file-upload-content").hide();
+        $(".image-upload-wrap").show();
+      }
+      $(".image-upload-wrap").bind("dragover", function () {
+        $(".image-upload-wrap").addClass("image-dropping");
+      });
+      $(".image-upload-wrap").bind("dragleave", function () {
+        $(".image-upload-wrap").removeClass("image-dropping");
+      });
+    </script>
+  </body>
+</html>

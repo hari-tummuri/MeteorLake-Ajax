@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Legal Research Assistant</title>
+		<link rel="stylesheet" href="css/common-style.css">
+		<link rel="stylesheet" href="css/themify-icons.css">
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+		
+		<!-- bootstrap js -->		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.bundle.js"></script> 
+		
+		<!-- Google Red Hat Display -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+		
+		<!-- Fontawesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<!-- Multi Select css and JS -->
+		<script type="text/javascript" src="assets/js/bootstrap-multiselect.js"></script>
+		<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
+		
+		<!-- Data table code -->
+		<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script> 
+		<script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script> 
+		<script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script> 
+		<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script> 
+		<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script> 
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+
+		<script src="js/common.js"></script>
+		<script>
+
+
+
+
+			$(document).ready(function () {
+
+				DoAuth();
+
+                var aHtmlStr = "";
+                $.each(aCaseItems, function (i, item) {
+                    aHtmlStr += "<tr>"
+                        + "<td><span><a href='chat.html?caseid=" + item.caseno +"'>" + item.caseno + "</a></span></td>"
+                        + "<td><span>" + item.lawyer + "</span></td>"
+                        + "<td><span>Victor Jhon</span></td>"
+                        + "<td><span>" + item.casetype + "</span></td>"
+                        + "<td><span>Kerala Hight Court</span></td>"
+                        + "<td><span>" + item.judge + "</span></td>"
+                        + "<td><span class='status - blue'>" + item.status + "</span></td>"
+                        + "</tr>";
+
+                });
+                $("#tblCase").html(aHtmlStr);
+			});
+			
+
+
+		</script>
+
+	</head>
+	<body>
+		<div class="wrapper">	
+			<div class="app-container">	
+				<header class="header-fixed nav-bar-head">
+					<div class="logo-account-hold">
+						<div class="left-app-logo">
+							<img src="images/logo-application.png" alt="Legal Research Assistant" title="Legal Research Assistant" class="logo-main" />
+							<img src="images/wipro-logo.png" alt="Wipro" title="Wipro" class="logo-parent" />
+						</div>
+						<div class="right-app-account">
+							<div class="notify-hold user-hold">							
+								<div class="user-sec">
+									<div class="account-right">
+										<ul>			
+											<li>
+												<ul id="menu-log">
+													<li>
+														<input id="check01" type="checkbox" name="menu">
+														<label for="check01"><span class="uname-dp">AB</span></label>
+														<ul class="submenu">		
+															<li><div class="submenu-dp" >AB</div></li>
+															<li><a href="profile.html"><span><i class="fa fa-user" aria-hidden="true"></i></span>My Profile</a></li>
+															<li><a href="login.html"><span><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logout</a></li>
+														</ul>
+													</li>
+												</ul>				
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>	
+						</div><!-- right-app-account -->
+					</div><!-- logo-account-hold -->
+					<div class="main-menu-section">
+						<ul class="nav-dark">
+							<li><a href="home.html">Home</a></li>
+							<li><a href="dashboard.html" class="active">Dashboard</a></li>
+							<li><a href="summary.html">Summary</a></li>
+						</ul>
+					</div>
+				</header>				
+				
+				<main class="body-wrapper">						
+					<div class="content-wrapper right-main-containr">
+						
+						<h2 class="page-head">Welcome to Legal Case Dashboard</h2>
+						
+						<div class="main-data-hold">
+							<div class="app-main-wrapper">
+								<div class="inn-main-hold">																		
+									<div class="section-wrapper">
+										<div class="section-content d-none">
+											<div class="row">
+												<div class="col-md-2">
+													<div class="form-group chm-formgroup FilterBlue">
+														<select id="CaseNumberFilter" name="Customer group" class="form-control chm-formselect">
+															<option value="csno1">Case No.</option>
+															<option value="csno1">1024</option>
+															<option value="csno1">1025</option>
+															<option value="csno1">1026</option>
+														</select>
+													</div>
+												</div>
+												
+												<div class="col-md-2">
+													<div class="form-group chm-formgroup FilterBlue">
+														<select id="CaseNumberFilter" name="Customer group" class="form-control chm-formselect">
+															<option value="csno1">Type</option>
+															<option value="csno1">Contract Dispute</option>
+															<option value="csno1">XXXXXXXXXX</option>
+															<option value="csno1">XXXXXXXXXX</option>
+														</select>
+													</div>
+												</div>
+												
+												<div class="col-md-2">
+													<div class="form-group chm-formgroup FilterBlue">
+														<select id="CaseNumberFilter" name="Customer group" class="form-control chm-formselect">
+															<option value="csno1">Court</option>
+															<option value="csno1">Kerala Hight Court</option>
+															<option value="csno1">Bengaluru District Court</option>
+															<option value="csno1">Maharastra Civil Court</option>
+														</select>
+													</div>
+												</div>
+												
+												<div class="col-md-2">
+													<div class="form-group chm-formgroup FilterBlue">
+														<select id="CaseNumberFilter" name="Customer group" class="form-control chm-formselect">
+															<option value="csno1">Status</option>
+															<option value="csno1">In Progress</option>
+															<option value="csno1">Completed</option>
+														</select>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+										<div class="section-content">
+											<div class="row">
+												<div class="col-md-12">
+													<table id="employeemaster" class="table table-bordered table-striped table-cust-new d-table dataTableRule ">
+														<thead>
+															<tr>
+																<th class="thd-w10">
+																	<span>Case No.</span>
+																	<div class="form-group chm-formgroup TableFilterForm d-none">
+																		<select id="CaseNumberFilter" name="Customer group" class="form-control chm-formselect">
+																			<option value="csno1">Case No.</option>
+																			<option value="csno1">1024</option>
+																			<option value="csno1">1025</option>
+																			<option value="csno1">1026</option>
+																		</select>
+																	</div>
+																</th>
+																<th class="thd-w15">
+																	<span>Client Name</span>
+																	<div class="form-group chm-formgroup TableFilterForm  d-none">
+																		<select id="ClientNamerFilter" name="Customer group" class="form-control chm-formselect">
+																			<option value="cname1">Client Name</option>
+																			<option value="cname2">Sahil Sameer</option>
+																			<option value="cname3">Rahul Nambiar</option>
+																			<option value="cname4">Adinarayana</option>
+																		</select>
+																	</div>
+																</th>
+																<th class="thd-w15">
+																	<span>Opposing Party</span>
+																	<div class="form-group chm-formgroup TableFilterForm  d-none">
+																		<select id="OpPartyFilter" name="Customer group" class="form-control chm-formselect">
+																			<option value="cname1">Opposing Party</option>
+																			<option value="cname2">Victor Jhon</option>
+																			<option value="cname3">Kavya Kumar</option>
+																			<option value="cname4">Ashish Hegde</option>
+																		</select>
+																	</div>
+																</th>
+																<th class="thd-w15">
+																	<span>Case Type</span>
+																	<div class="form-group chm-formgroup TableFilterForm  d-none">
+																		<select id="CaseTypeFilter" name="Customer group" class="form-control chm-formselect">
+																			<option value="cname1">Case Type</option>
+																			<option value="cname2">Contract Dispute</option>
+																			<option value="cname3">XXXXXXXXX</option>
+																			<option value="cname4">XXXXXXXXX</option>
+																		</select>
+																	</div>
+																</th>
+																<th class="thd-w20">
+																	<span>Court Details</span>
+																	<div class="form-group chm-formgroup TableFilterForm  d-none">
+																		<select id="CourtDetailsFilter" name="Customer group" class="form-control chm-formselect">
+																			<option value="cdt1">Court Details</option>
+																			<option value="cdt2">Kerala High Court</option>
+																			<option value="cdt3">Bengaluru District Court</option>
+																			<option value="cdt4">Karnataka High Court</option>
+																		</select>
+																	</div>
+																</th>
+																<th class="thd-w15">
+																	<span>Judge</span>
+																	<div class="form-group chm-formgroup TableFilterForm  d-none">
+																		<select id="JudgeFilter" name="Customer group" class="form-control chm-formselect">
+																			<option value="judg1">Judge</option>
+																			<option value="judg2">Ramnarayana</option>
+																			<option value="judg3">Chandrika KT</option>
+																			<option value="judg4">Praveen RK</option>
+																		</select>
+																	</div>
+																</th>
+																<th class="thd-w10">
+																	<span>Status</span>
+																	<div class="form-group chm-formgroup TableFilterForm  d-none">
+																		<select id="StatusFilter" name="Customer group" class="form-control chm-formselect">
+																			<option value="stts1">Status</option>
+																			<option value="stts2">In Progress</option>
+																			<option value="stts3">Completed</option>
+																			<option value="stts4">Hold</option>
+																		</select>
+																	</div>
+																</th>
+															</tr>
+														</thead>
+														<tbody id="tblCase">
+															<!--<tr>
+																<td><span>1024</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1025</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1177</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1008</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1504</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-green">Completed</span></td>
+															</tr>
+															<tr>
+																<td><span>1024</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1024</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1044</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-green">Completed</span></td>
+															</tr>
+															<tr>
+																<td><span>1097</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1024</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1044</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-green">Completed</span></td>
+															</tr>
+															<tr>
+																<td><span>1097</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1024</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-blue">In Progress</span></td>
+															</tr>
+															<tr>
+																<td><span>1044</span></td>
+																<td><span>Rahul Nambiar</span></td>		
+																<td><span>Victor Jhon</span></td>
+																<td><span>Contract Dispute</span></td>	
+																<td><span>Kerala Hight Court</span></td>	
+																<td><span>Navneet Raj</span></td>	
+																<td><span class="status-green">Completed</span></td>
+															</tr>-->														
+														</tbody>
+													</table>	
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- inn-main-hold -->
+							</div><!-- app-main-wrapper -->					
+						</div>						
+						<footer class="tne-app-footer">	
+							<div class="footer-custom"><p>Copyright &copy; 2021-2022. All rights reserved.</p> <p><span class="mr-2">WIPRO Legal Research Assistant</span></p></div>
+						</footer>						
+					</div><!-- right-main-containr -->	
+				</main>
+			</div>	
+		</div>
+
+		<script>			
+			$(document).ready(function() {
+				$('.dataTableRule').dataTable( {
+					"aLengthMenu": [[10, 15, -1], [10, 15, "All"]],
+					"pageLength": 10
+				} );
+			} );
+		</script>
+	</body>
+</html>									

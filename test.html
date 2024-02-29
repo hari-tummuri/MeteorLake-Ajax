@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+
+            //aData = '{"caseId": "1024"}';
+
+            //$.ajax({
+            //    url: 'http://localhost:8080/apiCaseId',
+            //    crossDomain: true,
+            //    method: 'post',
+            //    headers: {
+            //        'accept': 'application/json'
+            //    },
+            //    contentType: 'application/json',
+            //    data: JSON.stringify(aData)
+            //}).done(function (response) {
+            //    alert(response);
+            //    console.log(response);
+            //});
+
+
+            $.ajax({
+                url: 'http://localhost:8080/apiCaseId?caseId=89',
+                crossDomain: true,
+                method: 'post',
+                headers: {
+                    'accept': 'application/json'
+                },
+                contentType: 'application/x-www-form-urlencoded',
+                data: ''
+            }).done(function (response) {
+                console.log(response);
+                $("h3").html(response);
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Test Page</h1>
+    <h3></h3>
+</body>
+</html>

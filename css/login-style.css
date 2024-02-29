@@ -1,0 +1,119 @@
+.wrapper-login {
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: #010112;
+    min-height: 100vh;
+}
+
+.login-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-hold-inn {
+    background: url(../images/login-bg-banner.gif) 50% 0% no-repeat;
+    width: 1000px;
+    height: 625px;
+    display: block;
+    background-size: 100%;
+    border: 1px solid rgba(256,256,256, 0.3);
+    border-radius: 14px;
+}
+
+.login-area-hold{}
+
+.login-area-hold .logo-sec {
+    display: block;
+    margin-top: 125px;
+    padding-left: 162px;
+}
+
+.login-area-hold .cred-details {
+    max-width: 500px;
+    display: block;
+    position: relative;
+    top: 110px;
+    width:100%;
+    padding-right: 170px;
+    box-sizing: border-box;
+    padding-left: 30px 
+}
+
+.row-hold {
+    display: block;
+    padding: 0px;
+    margin: 10px 0 20px 0;
+    width: 100%;
+}
+
+.form-group.chm-formgroup{position:relative;}
+.form-group.chm-formgroup label { font-size: 14px;  color: #444444;  font-weight: 700;  line-height: 100%;  padding: 0; margin: 0;  text-transform: capitalize;
+width: 100%;  text-align: left;}
+.bcard-wrapper .bcard-last .form-group.chm-formgroup .form-control.chm-formtextarea.bcard-custom {height: 100%;   margin: 0;   padding:5px 10px;  border: 0px;}
+input.form-control.chm-forminput {
+    border: 1px solid #c2c2c2;
+    margin-top: 0px;
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+    height: 54px;
+    border-radius: 0px;
+    padding:0 15px 0 25px;
+    background: transparent;
+    color:#f1f1f1;
+    font-weight: 500;
+    border-radius: 28px;
+}
+textarea.form-control.chm-formtextarea{border: 1px solid #cfcfcf; margin-top:5px !important; font-size: 14px; letter-spacing: 0.2px; border-radius: 0px; padding: 0 0 0 6px;  background: rgba(256,256,256, 0.4); min-height:40px; }
+select.form-control.chm-formselect {border: 1px solid #cfcfcf; margin-top:5px; font-size: 14px; letter-spacing: 0.2px; height:34px; border-radius: 0px;  padding:0 0 0 6px;  background: transparent; background-color: rgba(256,256,256, 0.4) !important; color:#333333;  font-weight:500;}
+input.form-control.chm-forminput:focus,
+select.form-control.chm-formselect:focus,
+textarea.form-control.chm-formtextarea:focus{box-shadow:none; border:1px solid rgba(0,122,56, 0.6);}
+
+.textlink-sm {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: #cdcdcd;
+    font-size: 1rem;
+    line-height: 1.2rem;
+	font-weight:400;
+}
+
+.textlink-md {
+    text-align: center;
+    display: block;
+    color: #cdcdcd;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.inline-signup {
+    width: 100%;
+    display: flex;
+    color: #dddddd;
+    white-space: nowrap;
+    padding: 10px 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.btn.btn-primary.button-blue {
+    background: #252763;
+    border: 1px solid #252763;
+    width: 100%;
+    height: 45px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    line-height: 1.4rem;
+}

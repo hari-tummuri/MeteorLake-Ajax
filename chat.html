@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Legal Research Assistant</title>
+    <link rel="stylesheet" href="css/common-style.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+
+    <!-- bootstrap js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <!-- Google Red Hat Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Multi Select css and JS -->
+    <script
+      type="text/javascript"
+      src="assets/js/bootstrap-multiselect.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="css/bootstrap-multiselect.css"
+      type="text/css"
+    />
+
+    <!-- Data table code -->
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css"
+    />
+    <style>
+      text-box {
+        border: 2px !important;
+        border-radius: 15px !important;
+        border-color: black !important;
+      }
+
+      button {
+        background-color: #2637c7;
+        color: white;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 0px;
+        padding: 5px 14px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        /* background-color: #48489c;
+          color: white; */
+        background-color: #1d1d46;
+        color: white;
+      }
+
+      .chat-container {
+        /* width: 423px; */
+        width: 95%;
+        height: 553px;
+        background-color: #7e7ea0;
+        color: white;
+        /* margin-top: 10px; */
+        padding-top: 10px;
+        /* padding-bottom: 10px; */
+        border-radius: 10px 40px 10px 40px;
+      }
+
+      .chat-history {
+        /* margin-left: 37px; */
+        /* margin-top: 37px; */
+        /* padding-top: 25px; */
+        /* padding: auto; */
+        /* padding: 5% 0%; */
+        margin: 0% 5%;
+        height: 473px;
+        width: 90%;
+        overflow-y: scroll;
+        /* border: 1px solid #ccc; */
+        /* padding: 5px; */
+        margin-bottom: 10px;
+        /* margin-top: 10px; */
+        /* background-color: #55658F; */
+        border-radius: 10px 0 0 10px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .chat-history2 {
+        /* margin-left: 37px; */
+        margin-top: 25px;
+        /* padding-top: 25px; */
+        /* padding: auto; */
+        height: 500px;
+        width: 350px;
+        /* overflow-y: scroll; */
+        border: 1px solid #ccc;
+        /* padding: 10px; */
+        /* margin-bottom: 10px; */
+        /* background-color: #dcdddf; */
+        border-radius: 10px;
+      }
+
+      .inpuut {
+        background-color: #1d1d46;
+        margin: 0px 20px 20px 25px;
+        width: 90%;
+        padding: 2%;
+        /* height: 50%; */
+        color: whitesmoke;
+        border: 1px solid #ccc;
+        /* border: none; */
+        border-radius: 10px;
+        /* margin-left: 35px; */
+      }
+
+      .inpuut:hover {
+        background-color: #2d2d51;
+        /* margin: 20px; */
+        /* width: 380px; */
+        color: whitesmoke;
+      }
+
+      .message {
+        /* margin-top: auto; */
+        /* padding-bottom: 100px; */
+      }
+
+      /* Jumping balls for loader demo*/
+      /*
+        .border-secondary,
+        .loader-demo-box {
+             border-color: #a3a4a5 !important
+        }
+
+        .rounded,
+        .loader-demo-box {
+             border-radius: 0.25rem !important
+        }
+
+
+
+        .jumping-dots-loader {
+             border-radius: 100%;
+             position: relative;
+             margin: 0 auto
+        }
+
+        .jumping-dots-loader span {
+             display: inline-block;
+             width: 10px;
+             height: 10px;
+             border-radius: 100%;
+             background-color: #5656b2;
+             margin: 3px
+        }
+
+        .jumping-dots-loader span:nth-child(1) {
+             animation: bounce 1s ease-in-out infinite
+        }
+
+        .jumping-dots-loader span:nth-child(2) {
+             animation: bounce 1s ease-in-out 0.33s infinite
+        }
+
+        .jumping-dots-loader span:nth-child(3) {
+             animation: bounce 1s ease-in-out 0.66s infinite
+        }
+
+        @keyframes bounce {
+
+             0%,
+             75%,
+             100% {
+                 -webkit-transform: translateY(4px);
+                 -ms-transform: translateY(4px);
+                 -o-transform: translateY(4px);
+                 transform: translateY(4px)
+             }
+
+             25% {
+                 -webkit-transform: translateY(-4px);
+                 -ms-transform: translateY(-4px);
+                 -o-transform: translateY(-4px);
+                 transform: translateY(-4px)
+             }
+        } */
+
+      /* typing animation from css-loaders.com */
+      .submitt {
+        background-color: #4446bd;
+        color: #ffffff;
+      }
+
+      .submitt:hover {
+        background-color: #2d2d6a;
+        color: #ffffff;
+      }
+
+      .para {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #1d1d46;
+        border-radius: 10px;
+        word-wrap: break-word;
+      }
+
+      .Chattop {
+        background-color: #1d1d46;
+        width: 350px;
+        color: white;
+        text-align: center;
+        margin: 0px auto;
+        padding: auto;
+        font-size: 18px;
+        border-radius: 38px 38px 0 0;
+      }
+
+      .loader {
+        width: 40px;
+        aspect-ratio: 2;
+        --_g: no-repeat radial-gradient(circle closest-side, #ffffff 90%, #0000);
+        background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+        background-size: calc(100% / 3) 50%;
+        animation: l3 1s infinite linear;
+      }
+
+      @keyframes l3 {
+        20% {
+          background-position: 0% 0%, 50% 50%, 100% 50%;
+        }
+
+        40% {
+          background-position: 0% 100%, 50% 0%, 100% 50%;
+        }
+
+        60% {
+          background-position: 0% 50%, 50% 100%, 100% 0%;
+        }
+
+        80% {
+          background-position: 0% 50%, 50% 50%, 100% 100%;
+        }
+      }
+
+      .input-with-mic {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* border: 1px solid #ccc; */
+        /* border: none;
+          border-radius: 40px; */
+      }
+
+      .mic-icon {
+        /* position: absolute; */
+        /* top: 10%; */
+        /* right: 50px; */
+        /* transform: translateY(-50%); */
+        color: whitesmoke;
+        cursor: pointer;
+      }
+
+      .mic-icon:hover {
+        color: #bec4df;
+      }
+
+      .input-field {
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .agent {
+        color: #1d1d46;
+      }
+
+      .chaat {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+      }
+    </style>
+    <script src="js/common.js"></script>
+    <script>
+      var MsgArr = [];
+      var caseno = "";
+      var aSelectedFile = "";
+      $(document).ready(function () {
+        $("#divChatLog").html("");
+        DoAuth();
+
+        //divFileList
+        //divFiles
+        //divChat
+        //lnkFile
+        //lnkChat
+        $("#lnkFile").click(function () {
+          $("#divFiles").show();
+          $("#divChat").hide();
+          $(this).toggleClass("active");
+          $("#lnkChat").toggleClass("active");
+        });
+        $("#lnkChat").click(function () {
+          $("#divFiles").hide();
+          $("#divChat").show();
+          $(this).toggleClass("active");
+          $("#lnkFile").toggleClass("active");
+        });
+
+        caseno = getUrlVars()["caseid"];
+
+        var aFilesHtm = "";
+        var arrFile = [];
+        $.each(aCaseItems, function (i, item) {
+          if (item.caseno == caseno) {
+            $("#lblSummary").html(item.summary);
+            arrFile = item.files.split(",");
+          }
+        });
+        console.log(arrFile);
+        $.each(arrFile, function (i, file) {
+          aFilesHtm +=
+            "<a href='#'  class='badge badge-danger p-1 m-1 casefile'>" +
+            file +
+            "</a>";
+        });
+        $("#divFileList").html(aFilesHtm);
+        $("#divFiles").show();
+        $("#divChat").hide();
+        console.log(aFilesHtm);
+        $(".casefile").click(function () {
+          aSelectedFile = $(this).text();
+          // loadCase1(caseno, aSelectedFile);
+          loadCase(caseno);
+          $(".casefile").removeClass("active");
+          $(this).addClass("active");
+          $("#divFiles").hide();
+          $("#divChat").show();
+          $("#ifrmCaseDoc").attr("src", "files/" + aSelectedFile);
+        });
+
+        $("#txtQuestion").keydown(function (e) {
+          if (e.keyCode == 13) {
+            if (aSelectedFile != "") {
+              var aQues = $(this).val();
+              getReply(caseno, aQues);
+              $(this).val("");
+
+              var aMsg = { name: "User", msg: aQues };
+              MsgArr.push(aMsg);
+              SetChatHistory();
+            } else {
+              alert("Please select a file");
+              $("#divFiles").show();
+            }
+          }
+        });
+      });
+
+      function SetChatHistory() {
+        var aMsgHtml = "";
+        var IsPendingRes = 0;
+        $.each(MsgArr, function (i, aMsg) {
+          aMsgHtml +=
+            " <div class='message'>" +
+            "<p class='para'>" +
+            "<strong>" +
+            aMsg.name +
+            ":</strong> " +
+            aMsg.msg +
+            "</p></div>";
+          if (aMsg.name != "Agent") {
+            IsPendingRes = 1;
+          } else {
+            IsPendingRes = 0;
+          }
+        });
+        if (IsPendingRes == 1) {
+          aMsgHtml +=
+            "<div class='d-flex align-items-center agent message para'>" +
+            "<strong style='color: white'>Agent : &nbsp;</strong>" +
+            "<div class='loader'></div></div>";
+        }
+        $("#divChatLog").html(aMsgHtml);
+      }
+
+      function getUrlVars() {
+        var vars = [],
+          hash;
+        var hashes = window.location.href
+          .slice(window.location.href.indexOf("?") + 1)
+          .split("&");
+        for (var i = 0; i < hashes.length; i++) {
+          hash = hashes[i].split("=");
+          vars.push(hash[0]);
+          vars[hash[0]] = hash[1];
+        }
+        return vars;
+      }
+
+      function getReply(caseid, question) {
+        $.post(
+          "http://127.0.0.1:8080/apiQuery",
+          {
+            caseId: caseid,
+            query: question,
+          },
+          function (data, status) {
+            console.log(data);
+            console.log(status);
+            //test and update
+            var aMsg = { name: "Agent", msg: data };
+            MsgArr.push(aMsg);
+            SetChatHistory();
+            // alert("Data: " + data + "\nStatus: " + status);
+          }
+        );
+      }
+
+      function loadCase1(caseid, fileName) {
+        $.post(
+          "http://127.0.0.1:8080/apiCaseId",
+          { caseId: caseid, fileNm: fileName },
+          function (data, status) {
+            console.log(data);
+            console.log(status);
+          }
+        );
+      }
+
+      function loadCase(caseid) {
+        //$.ajax({
+        //    url: 'http://localhost:8080/apiCaseId',
+        //    crossDomain: true,
+        //    method: 'post',
+        //    headers: {
+        //        'accept': 'application/json'
+        //    },
+        //    contentType: 'application/json',
+        //    data: JSON.stringify({
+        //        'caseId': caseid
+        //    })
+        //}).done(function (response) {
+        //    console.log(response);
+        //});
+
+        $.ajax({
+          url: "http://127.0.0.1:8080/apiCaseId?caseId=" + caseid,
+          crossDomain: true,
+          method: "post",
+          headers: {
+            accept: "application/json",
+          },
+          contentType: "application/x-www-form-urlencoded",
+          data: "",
+        }).done(function (response) {
+          console.log(response);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="app-container">
+        <header class="header-fixed nav-bar-head">
+          <div class="logo-account-hold">
+            <div class="left-app-logo">
+              <img
+                src="images/logo-application.png"
+                alt="Legal Research Assistant"
+                title="Legal Research Assistant"
+                class="logo-main"
+              />
+              <img
+                src="images/wipro-logo.png"
+                alt="Wipro"
+                title="Wipro"
+                class="logo-parent"
+              />
+            </div>
+            <div class="right-app-account">
+              <div class="notify-hold user-hold">
+                <div class="user-sec">
+                  <div class="account-right">
+                    <ul>
+                      <li>
+                        <ul id="menu-log">
+                          <li>
+                            <input id="check01" type="checkbox" name="menu" />
+                            <label for="check01"
+                              ><span class="uname-dp">AB</span>Aditya
+                              Bhuvan</label
+                            >
+                            <ul class="submenu">
+                              <li><div class="submenu-dp">AB</div></li>
+                              <li>
+                                <a href="profile.html"
+                                  ><span
+                                    ><i
+                                      class="fa fa-user"
+                                      aria-hidden="true"
+                                    ></i></span
+                                  >My Profile</a
+                                >
+                              </li>
+                              <li>
+                                <a href="login.html"
+                                  ><span
+                                    ><i
+                                      class="fa fa-sign-out"
+                                      aria-hidden="true"
+                                    ></i></span
+                                  >Logout</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- right-app-account -->
+          </div>
+          <!-- logo-account-hold -->
+          <div class="main-menu-section">
+            <ul class="nav-dark">
+              <li><a href="home.html" class="active">Home</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="summary.html">Summary</a></li>
+            </ul>
+          </div>
+        </header>
+
+        <main class="body-wrapper">
+          <div class="content-wrapper right-main-containr">
+            <div class="main-data-hold">
+              <div class="app-main-wrapper">
+                <div class="inn-main-hold">
+                  <div class="section-wrapper">
+                    <div class="section-content">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="cases-status-wrapper">
+                            <div class="cases-hold">
+                              <div class="cases-left-hold">
+                                <ul class="nav-dark">
+                                  <li class="active">
+                                    <a class="btn btn-primary" id="lnkFile"
+                                      >Files</a
+                                    >
+                                  </li>
+                                  &nbsp;
+                                  <li>
+                                    <a id="lnkChat" class="btn btn-primary"
+                                      >Chat</a
+                                    >
+                                  </li>
+                                </ul>
+                                <hr style="color: red" />
+                                <div
+                                  class="col-12 chaat"
+                                  style="align-items: flex-start"
+                                  id="divFiles"
+                                >
+                                  <div
+                                    class="list-group"
+                                    id="divFileList"
+                                  ></div>
+                                </div>
+
+                                <div class="col-12 chaat" id="divChat">
+                                  <h3 style="padding: 15px" class="Chattop">
+                                    Chat with the Document
+                                  </h3>
+                                  <div class="chat-container">
+                                    <div class="chat-history" id="divChatLog">
+                                      <div class="message">
+                                        <p class="para" id="lblUserMessage">
+                                          <strong>Hari:</strong> Hi asdasdasd
+                                        </p>
+                                      </div>
+
+                                      <div
+                                        class="d-flex align-items-center agent message para"
+                                      >
+                                        <strong style="color: white"
+                                          >Agent : &nbsp;</strong
+                                        >
+                                        <div class="loader"></div>
+                                      </div>
+                                    </div>
+
+                                    <div class="input-with-mic">
+                                      <input
+                                        id="txtQuestion"
+                                        class="inpuut"
+                                        placeholder="Type your query here"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- child -->
+
+                              <div class="cases-right-hold">
+                                <div
+                                  class="d-flex justify-content-between px-3"
+                                >
+                                  <div class="col-12 px-4">
+                                    <iframe
+                                      id="ifrmCaseDoc"
+                                      src=""
+                                      width="100%"
+                                      height="600px"
+                                      style="border: none"
+                                    >
+                                      This browser does not support PDFs. Please
+                                      download the PDF to view it:
+                                      <a href="#" id="lnkCaseFile"
+                                        >Download PDF</a
+                                      >
+                                    </iframe>
+
+                                    <div class="row my-3 w-50 m-auto">
+                                      <button
+                                        type="submit"
+                                        class="submitt"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                      >
+                                        Get summary
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- child -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- inn-main-hold -->
+              </div>
+              <!-- app-main-wrapper -->
+
+              <!--Modal-->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Summary
+                      </h5>
+                    </div>
+                    <div class="modal-body">
+                      <p id="lblSummary"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="tne-app-footer">
+              <div class="footer-custom">
+                <p>Copyright &copy; 2021-2022. All rights reserved.</p>
+                <p><span class="mr-2">WIPRO Legal Research Assistant</span></p>
+              </div>
+            </footer>
+          </div>
+          <!-- right-main-containr -->
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
