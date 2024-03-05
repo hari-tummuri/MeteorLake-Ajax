@@ -73,6 +73,17 @@
     />
 
     <script src="js/common.js"></script>
+    <style>
+      .chatHold-common {
+        border: 2px solid #cfcdcd !important;
+        border-radius: 10px !important;
+        padding: 10px 10px -30px 10px;
+        /* padding-bottom: -30px !important; */
+        margin-bottom: 20px;
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2),
+          0 3px 10px 0 rgba(0, 0, 0, 0.2);
+      }
+    </style>
     <script>
       $(document).ready(function () {
         DoAuth();
@@ -136,7 +147,7 @@
     <div class="wrapper">
       <div class="app-container">
         <header class="header-fixed nav-bar-head">
-          <div class="logo-account-hold">
+          <div class="logo-account-hold" style="height: 70%">
             <div class="left-app-logo d-flex align-items-center">
               <!-- <img
                 src="images/logo-application.png"
@@ -156,12 +167,12 @@
                 title="Wipro"
                 class="logo-parent ml-0 mr-2"
               />
-              <h4 class="text-white mb-0">
+              <h3 class="text-white mb-0">
                 Legal Research Assistant<sub
                   style="font-size: 0.8rem; margin-left: 10px"
                   >Powered by Intel® Core™ Ultra Processor</sub
                 >
-              </h4>
+              </h3>
             </div>
             <div class="right-app-account">
               <div class="notify-hold user-hold">
@@ -738,7 +749,7 @@
             type: "variablepie",
           },
           title: {
-            text: "Status Chart",
+            text: "Case Status",
             align: "center",
           },
           tooltip: {
@@ -763,10 +774,10 @@
               borderRadius: 5,
               data: aStatusChartAr,
               colors: [
-                "#4caefe",
-                "#3dc3e8",
-                "#2dd9db",
-                "#1feeaf",
+                "#0a0e73",
+                "#4663ac",
+                "#3e4771",
+                "#d3d3de",
                 "#0ff3a0",
                 "#00e887",
                 "#23e274",
@@ -774,6 +785,7 @@
             },
           ],
         });
+        $(".highcharts-credits").hide();
       });
       //Chart 2
 
@@ -795,7 +807,7 @@
           type: "variablepie",
         },
         title: {
-          text: "Case Type Chart",
+          text: "Case Type",
           align: "center",
         },
         tooltip: {
@@ -820,10 +832,10 @@
             borderRadius: 5,
             data: aStatusChartAr1,
             colors: [
-              "#4caefe",
-              "#3dc3e8",
-              "#2dd9db",
-              "#1feeaf",
+              "#0a0e73",
+              "#4663ac",
+              "#3e4771",
+              "#d3d3de",
               "#0ff3a0",
               "#00e887",
               "#23e274",
@@ -852,7 +864,7 @@
           type: "variablepie",
         },
         title: {
-          text: "Judge Chart",
+          text: "Judge",
           align: "center",
         },
         tooltip: {
@@ -877,17 +889,18 @@
             borderRadius: 5,
             data: aStatusChartAr2,
             colors: [
-              "#4caefe",
-              "#3dc3e8",
-              "#2dd9db",
-              "#1feeaf",
-              "#0ff3a0",
-              "#00e887",
-              "#23e274",
+              "#0a0e73",
+              "#4663ac",
+              "#3e4771",
+              "#d3d3de",
+              "#12665e",
+              // "#00e887",
+              // "#23e274",
             ],
           },
         ],
       });
+      $(".highcharts-credits").hide();
     </script>
   </body>
 </html>

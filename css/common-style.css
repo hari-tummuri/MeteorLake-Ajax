@@ -734,7 +734,7 @@ select.form-control.chm-formselect option{padding:4px !important; lineheight:30p
 .modal-dialog.appTE-modal .modal-content .modal-header .close.modal-close {font-size:36px; font-weight:300; padding:10px 10px 0 0;}
 .modal-dialog.appTE-modal .modal-content .modal-header button.close.modal-close:focus{outline: none;}
 .modal-dialog.appTE-modal .modal-content .modal-body {height: calc(100vh - 150px); overflow-y:auto; overflow-x:hidden;}
-.modal-dialog.appTE-modal .modal-content .modal-body .modal-content-wrapper{display:flex;  flex-flow:column;}
+.modal-dialog.appTE-modal .modal-content .modal-body .modal-content-wrapper{display:flex;  flex-flow:column; }
 .modal-dialog.appTE-modal .modal-content .modal-footer{}
 
 .modal-dialog.appTE-modal .modal-content .modal-footer .btn.btn-primary{font-family: 'Red Hat Display', sans-serif;  background-color: rgba(111, 159, 39, 0.9);
@@ -6048,7 +6048,7 @@ h2.page-head {
     font-weight: 500;
     line-height: 2.2rem;
     padding: 0 0 0 15px;
-    margin: 15px 0;
+    margin: 40px 0 20px 0;
 }
 
 .form-group.chm-formgroup.FilterBlue select.form-control.chm-formselect {
@@ -6159,7 +6159,7 @@ h2.page-head {
 
 .drag-text h3 {
   font-weight: 100;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #24245c;
   padding: 60px 0;
 }

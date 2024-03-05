@@ -225,7 +225,7 @@ var aCaseItems = [
     caseno: "1024",
     lawyer: "Fali Sam Nariman",
     casetype: "Civil law",
-    judge: "DAS J. aaa",
+    judge: "DAS J.",
     status: "closed",
     summary:
       "The appeal case number 182 of 1952 is about an appellant, Hoosein Kasam Dada (India) Ltd., who submitted a Sales Tax return to the Sales Tax Officer, Akola. \nThe officer, not being satisfied with the account books produced by the appellant, submitted the case to the Assistant Commissioner of Sales Tax, Amravati, for assessment. \nThe Assistant Commissioner issued a notice under section 11 and fixed the case for disposal. After several proceedings, the Assistant Commissioner assessed the appellant to the sum of Rs. 58,657140.\n The appellant appealed to the Sales Tax Commissioner, Madhya Pradesh, under section 22(l) of the Central Provinces and Berar Sales Tax Act, 1947. \nHowever, the appeal was not admitted as it was not accompanied by any proof of the payment of the tax. The appellant then moved the Board of Revenue, Madhya Pradesh, by a revision application against the order of the Sales Tax Commissioner. \nThe High Court dismissed the application and the appellant applied for leave to appeal to the Supreme Court. \nThe Supreme Court granted special leave to appeal, but limited to the question of the effect of the amendment to section 22 of the Act on the appellant's appeal to the Sales Tax Commissioner, Madhya Pradesh.",
@@ -237,7 +237,7 @@ var aCaseItems = [
     caseno: "2728",
     lawyer: "Mukul Rohatgi",
     casetype: "Criminal law",
-    judge: "BHAGWATI J",
+    judge: "BHAGWATI, J",
     status: "closed",
     summary:
       "The Civil Appeal No. 2728 of 1972 revolves around the question of whether there was any material evidence to justify the finding that a sum of Rs. 1,07,350 was remitted by the appellant firm, M/s. Kishinchand Chellaram, from Madras to Bombay, and that it represented the undisclosed income of the firm.\nThe firm had challenged the decision of the Bombay High Court, which had upheld the Income Tax Officer's view that the firm failed to satisfactorily explain the source of the remittance, resulting in it being added to the firm's taxable income.\nHowever, the Supreme Court ruled that the evidence relied upon by the Income Tax Officer and the High Court, namely two letters from the Punjab National Bank Limited, did not constitute material evidence justifying the decision. \nThe court highlighted that the letters were not supported by any documents or papers and were based on hearsay. \nThe Supreme Court concluded that the highest evidence that could be established was that an employee of the firm remitted the amount to another employee, but it didn't necessarily imply that the amount belonged to the firm. \nThe burden was on the revenue to prove that the remitted amount belonged to the firm, which they failed to do.\n The Supreme Court thus allowed the appeal, setting aside the judgement of the High Court.",
@@ -362,7 +362,9 @@ function DoAuth() {
   var aRssHtm = "";
   $.each(rssFeed, function (i, feedt) {
     aRssHtm +=
-      "<span  style='color:white;'>&nbsp;||&nbsp;" + feedt.title + "</span>";
+      "<span  style='color:white;'>&nbsp;&nbsp;<span style='color:#0c0c4f;'>||</span>&nbsp;&nbsp;" +
+      feedt.title +
+      "</span>";
   });
   if (aRssHtm == "") {
     aRssHtm = "<span style='color:white;'>Feed Not Available</span>";
