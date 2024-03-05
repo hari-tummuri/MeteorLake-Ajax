@@ -168,14 +168,122 @@
         var aCount = 0;
         var aTodayCase = "";
         var aUpcCase = "";
+
+        const categoryCount = {};
+        for (const item of aEvents) {
+          const category = item.datestr;
+          categoryCount[category] = (categoryCount[category] || 0) + 1;
+        }
+        var arrData = Object.entries(categoryCount);
+        var aStatusChartAr = [];
+        $.each(arrData, function (i, aDataAr) {
+          var aCase = "";
+          var aCTime = "";
+          var aDay = "";
+          $.each(aEvents, function (i, evt) {
+            if (evt.datestr == aDataAr[0]) {
+              aCase = evt.caseNo;
+              aCTime = evt.startTime;
+              aDay = evt.day;
+
+              return false;
+            }
+          });
+
+          var aDataItem = {
+            date: aDataAr[0],
+            evts: aDataAr[1] - 1,
+            case: aCase,
+            time: aCTime,
+            day: aDay,
+          };
+          aStatusChartAr.push(aDataItem);
+        });
+        console.log(aStatusChartAr);
+
+        function addDays(date, days) {
+          var result = new Date(date);
+          result.setDate(result.getDate() + days);
+          return result;
+        }
+        const monthNames = [
+          "JAN",
+          "FEB",
+          "MAR",
+          "APR",
+          "MAY",
+          "JUN",
+          "JUL",
+          "AUG",
+          "SEP",
+          "OCT",
+          "NOV",
+          "DEC",
+        ];
+        for (var i = 1; i <= 30; i++) {
+          var aCurDate = addDays(new Date(), i - 1);
+          var aDD = "0" + aCurDate.getDate() + "";
+          var aFDate =
+            aDD.substr(aDD.length - 2) +
+            " " +
+            monthNames[aCurDate.getMonth()] +
+            " " +
+            (aCurDate.getFullYear() + "").substr(2);
+
+          if (i % 10 == 1) {
+            aCalHtml +=
+              "</div></div><div class='item'><div class='calendar-inn-section'>";
+            // aitemCount++;
+          }
+          var aEvt = {};
+          var aIsMatrch = false;
+          $.each(aStatusChartAr, function (i, aEv) {
+            console.log(aEv.date);
+            console.log(aFDate);
+
+            if (aEv.date == aFDate) {
+              console.log("okkkk");
+              aCalHtml +=
+                "<div class='calendar-child'>" +
+                "<div class='day-view-case'>" +
+                "<div class='DayView-Inn'>" +
+                "<div class='casedate'><h6>" +
+                aEv.date +
+                "</h6></div>" +
+                "<div class='casenote'><span><i class='fa fa-gavel' aria-hidden='true'></i></span><p><strong>Case " +
+                aEv.case +
+                "</strong></p> <span class='pl-2'> <i class='fa fa-hourglass' aria-hidden='true'></i></span><p>" +
+                aEv.time +
+                "</p> <span class='badge  ml-3' style='background-color:#1e1e4b;border:none;border-radius:5px;'> +" +
+                aEv.evts +
+                "</span> </div>" +
+                "</div>" +
+                "</div>" +
+                "</div>";
+              aIsMatrch = true;
+              return false;
+            }
+          });
+          if (aIsMatrch == false) {
+            aCalHtml +=
+              "<div class='calendar-child'>" +
+              "<div class='day-view-case'>" +
+              "<div class='DayView-Inn'>" +
+              "<div class='casedate'><h6>" +
+              aFDate +
+              "</h6></div>" +
+              "<div class='casenote'><span><i class='fa fa-gavel' aria-hidden='true'></i></span><p><strong>No Case</strong></p> <span class='pl-2'> <i class='fa fa-hourglass' aria-hidden='true'></i></span><p>-:-</p>  </div>" +
+              "</div>" +
+              "</div>" +
+              "</div>";
+          } else {
+            aIsMatrch = false;
+          }
+          console.log(aCalHtml);
+        }
+
         $.each(aEvents, function (i, evt) {
           if (aCaseArr.includes(evt.caseNo)) {
-            aCount++;
-            if (aCount % 10 == 1) {
-              aCalHtml +=
-                "</div></div><div class='item'><div class='calendar-inn-section'>";
-            }
-
             if (IsToday(evt.datestr)) {
               aTodayCase +=
                 "<div class='cdetails-child'><p>" +
@@ -200,27 +308,8 @@
                 evt.caseNo +
                 "</span></p></div>";
             }
-
-            aCalHtml +=
-              "<div class='calendar-child'>" +
-              "<div class='day-view-case'>" +
-              "<div class='DayView-Inn'>" +
-              "<div class='casedate'><h6>" +
-              evt.datestr +
-              "<span>" +
-              evt.day +
-              "</span></h6></div>" +
-              "<div class='casenote'><span><i class='fa fa-gavel' aria-hidden='true'></i></span><p><strong>Case " +
-              evt.caseNo +
-              "</strong></p> <span class='pl-5'> <i class='fa fa-hourglass' aria-hidden='true'></i></span><p>" +
-              evt.startTime +
-              "</p></div>" +
-              "</div>" +
-              "</div>" +
-              "</div>";
           }
         });
-
         $("#divUpcCase").html(aUpcCase);
         $("#divTodayCase").html(aTodayCase);
         var aNewItem =
@@ -233,6 +322,7 @@
           "</div>" +
           "</div></div></div>";
         aCalHtml = aCalHtml + "</div></div>";
+
         $("#CalendarCaseView").html(aCalHtml);
         $("#CalendarCaseView").addClass("owl-carousel");
         $("#CalendarCaseView").addClass("owl-theme");
