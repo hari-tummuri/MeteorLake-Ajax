@@ -9,10 +9,14 @@
     loss: 10,
     inProgress: 7,
     profileDp: "NA",
-    designation: "Advocate",
+    designation: "Senior Advocate",
+    practiceType: "Independent Practice",
+    AreasofExpertise: "Criminal Law, Civil Law",
+    YearsofExperience: 15,
+    Languages: "English, Hindi",
   },
   {
-    email: "abhijeet.kadam@wipro.com",
+    email: "abhijeet.kadam@gmail.com",
     password: "Abhijeet123",
     profileName: "Abhijeet",
     profileimage:
@@ -21,7 +25,11 @@
     loss: 11,
     inProgress: 15,
     profileDp: "AK",
-    designation: "Sr. Advocate",
+    designation: "Senior Advocate",
+    practiceType: "Independent Practice",
+    AreasofExpertise: "Criminal Law, Corporate Law",
+    YearsofExperience: 15,
+    Languages: "English, Hindi, Telugu",
   },
 ];
 

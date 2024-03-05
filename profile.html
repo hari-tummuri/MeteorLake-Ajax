@@ -48,7 +48,7 @@
 			.profile-inner .profile-list span{color:#ddd; font-size:14px; font-weight:400; line-height:20px; padding:0; margin:0;}
 			.profile-inner .profile-list span:first-child{width:30%; font-weight:600;}
 			.profile-inner .profile-list span:lasst-child{width:70%;}
-			.profile-dp {display: flex; width: 100%;  justify-content: center;}
+			.profile-dp {display: flex; width: 100%;  justify-content: center; margin-bottom:40px;}
 		</style>
 		<script src="js/common.js"></script>
 
@@ -65,8 +65,12 @@
 						$("#lblName").text(user.profileName);
 						$("#lblEmail").text(user.email);
 						$("#lblDesg").text(user.designation);
+            $('#practiceType').text(user.practiceType)
+            $('#AreasofExpertise').text(user.AreasofExpertise)
+            $('#YearsofExperience').text(user.YearsofExperience)
+            $('#languages').text(user.Languages)
 						// $(".profile-dp span").text(user.profileDp);
-            $(".profile-dp").html("<img width='120' height='120' style='border-radius: 50%' src='" + user.profileimage + "'>");
+            $(".profile-dp").html("<img width='120' height='120' style='border-radius: 50%;' src='" + user.profileimage + "'>");
 						aWon = user.won;
 						aLoss = user.loss;
 						aInProg = user.inProgress;
@@ -149,8 +153,14 @@
 														<div class="profile-inner">
 															<div class="profile-list"><span>Name</span> <span id="lblName" >Aditya Bhuvan</span></div>
 															<div class="profile-list"><span>Email</span> <span id="lblEmail">adityabhuvan1@wipro.com</span></div>
+                              <div class="profile-list"><span>Designation</span> <span id="lblDesg">Advocate</span></div>
+                              <div class="profile-list"><span>Practice Type</span> <span id="practiceType">Independent Practice</span></div>
+                              <div class="profile-list"><span>Areas of Expertise</span> <span id="AreasofExpertise">Criminal Law, Civil Law</span></div>
+                              <div class="profile-list"><span>Years of Experience</span> <span id="YearsofExperience">15</span></div>
+                              <div class="profile-list"><span>Languages known</span> <span id="languages">15</span></div>
+
 															<div class="profile-list d-none"><span>Employee Code</span> <span>EMP00445</span></div>
-															<div class="profile-list"><span>Designation</span> <span id="lblDesg">Advocate</span></div>
+															<div class="profile-list d-none "><span>Designation</span> <span id="lblDesg">Advocate</span></div>
 															<div class="profile-list  d-none"><span>Location</span> <span>Raighad</span></div>
 															<div class="profile-list  d-none"><span>Entity</span> <span>Wipro</span></div>
 														</div>
