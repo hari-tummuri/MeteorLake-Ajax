@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/themify-icons.css" />
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+
     <link
       rel="icon"
       type="image/png"
@@ -66,14 +67,21 @@
       rel="stylesheet"
       href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css"
     />
+    <script src="js/common.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        DoAuth();
+      });
+    </script>
   </head>
   <body>
     <div class="wrapper">
       <div class="app-container">
         <header class="header-fixed nav-bar-head">
           <div class="logo-account-hold">
-            <div class="left-app-logo">
-              <img
+            <div class="left-app-logo d-flex align-items-center">
+              <!-- <img
                 src="images/logo-application.png"
                 alt="Legal Research Assistant"
                 title="Legal Research Assistant"
@@ -84,7 +92,19 @@
                 alt="Wipro"
                 title="Wipro"
                 class="logo-parent"
+              /> -->
+              <img
+                src="images/Wipro_Logo_Secondary_White_Digital.png"
+                alt="Wipro"
+                title="Wipro"
+                class="logo-parent ml-0 mr-2"
               />
+              <h4 class="text-white mb-0">
+                Legal Research Assistant<sub
+                  style="font-size: 0.8rem; margin-left: 10px"
+                  >Powered by Intel® Core™ Ultra Processor</sub
+                >
+              </h4>
             </div>
             <div class="right-app-account">
               <div class="notify-hold user-hold">
@@ -135,9 +155,11 @@
           <!-- logo-account-hold -->
           <div class="main-menu-section">
             <ul class="nav-dark">
-              <li><a href="home.html">Home</a></li>
-              <li><a href="dashboard.html" class="">Dashboard</a></li>
-              <li><a href="summary.html" class="active">Summary</a></li>
+              <li><a href="home.html">My Hub</a></li>
+              <li><a href="dashboard.html" class="">Legal Cases</a></li>
+              <li>
+                <a href="summary.html" class="active">Legal answer engine</a>
+              </li>
             </ul>
           </div>
         </header>
@@ -155,13 +177,20 @@
                           <div class="file-upload">
                             <button
                               class="file-upload-btn"
+                              style="
+                                background-color: rgb(37, 37, 96, 1);
+                                border: none;
+                              "
                               type="button"
                               onclick="$('.file-upload-input').trigger( 'click' )"
                             >
                               Upload PDF
                             </button>
 
-                            <div class="image-upload-wrap">
+                            <div
+                              class="image-upload-wrap"
+                              style="border: 4px dashed #24245c"
+                            >
                               <!-- <input
                                 class="file-upload-input"
                                 type="file"
@@ -373,9 +402,10 @@
               <!-- app-main-wrapper -->
             </div>
             <footer class="tne-app-footer">
-              <div class="footer-custom">
-                <p>Copyright &copy; 2021-2022. All rights reserved.</p>
-                <p><span class="mr-2">WIPRO Legal Research Assistant</span></p>
+              <div class="footer-custom d-flex justify-content-center">
+                <p>&copy; 2024 Wipro Ltd. All rights reserved.</p>
+                <!-- 2024 Wipro Ltd, Inc -->
+                <!-- <p><span class="mr-2">WIPRO Legal Research Assistant</span></p> -->
               </div>
             </footer>
           </div>
@@ -395,11 +425,13 @@
       function uploadFile() {
         var fileInput = document.getElementById("pdfFile");
         var file = fileInput.files[0];
-        file = file.name;
-        document.getElementById("fileName").innerText = file;
+        console.log(file);
+        fileName = file.name;
+        document.getElementById("fileName").innerText = fileName;
         var formData = new FormData();
         formData.append("pdfFile", file);
-        alert("file uploaded");
+        // alert("file uploaded");
+        console.log(formData);
 
         $("#summary").show();
         $("#summary").addClass("d-flex");
@@ -409,12 +441,16 @@
 
         $.ajax({
           url: "http://127.0.0.1:4000/summary",
+          // url: "https://dummy.restapiexample.com/api/v1/create",
           type: "POST",
           data: formData,
+
+          // data: { name: "test", salary: "123", age: "23" },
           processData: false, // tell jQuery not to process the data
           contentType: false,
           success: function (data) {
             console.log("Upload successful!");
+            console.log(data);
             $("#summary").removeClass("d-flex");
             $("#summary").hide();
 

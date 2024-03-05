@@ -41,7 +41,7 @@
     width:100%;
     padding-right: 170px;
     box-sizing: border-box;
-    padding-left: 30px 
+    padding-left: 30px
 }
 
 .row-hold {
@@ -107,10 +107,11 @@ textarea.form-control.chm-formtextarea:focus{box-shadow:none; border:1px solid r
 .btn.btn-primary.button-blue {
     background: #252763;
     border: 1px solid #252763;
+    font-weight: bold;
     width: 100%;
     height: 45px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
+    /* font-size: 1.2rem; */
+    /* text-transform: uppercase; */
     display: flex;
     align-items: center;
     justify-content: center;

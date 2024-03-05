@@ -252,7 +252,7 @@
         border-radius: 38px 38px 0 0;
       }
 
-      .loader {
+      .loader-1 {
         width: 40px;
         aspect-ratio: 2;
         --_g: no-repeat radial-gradient(circle closest-side, #ffffff 90%, #0000);
@@ -352,14 +352,23 @@
         var arrFile = [];
         $.each(aCaseItems, function (i, item) {
           if (item.caseno == caseno) {
-            $("#lblSummary").html(item.summary);
+            var sentences = item.summary.split(/\n/);
+            for (var i = 0; i < sentences.length; i++) {
+              var para = document.createElement("p"); // Create a new paragraph element
+              var node = document.createTextNode("⇛" + sentences[i]); // Create a text node with the sentence
+              para.appendChild(node); // Append the text to the paragraph
+
+              var element = document.getElementById("lblSummary"); // Get the element where you want to add the sentences
+              element.appendChild(para); // Append the paragraph to the element
+            }
+            // $("#lblSummary").html(item.summary);
             arrFile = item.files.split(",");
           }
         });
         console.log(arrFile);
         $.each(arrFile, function (i, file) {
           aFilesHtm +=
-            "<a href='#'  class='badge badge-danger p-1 m-1 casefile'>" +
+            "<a href='#'  class='badge badge-light p-2 m-1 casefile'>" +
             file +
             "</a>";
         });
@@ -418,7 +427,7 @@
           aMsgHtml +=
             "<div class='d-flex align-items-center agent message para'>" +
             "<strong style='color: white'>Agent : &nbsp;</strong>" +
-            "<div class='loader'></div></div>";
+            "<div class='loader-1'></div></div>";
         }
         $("#divChatLog").html(aMsgHtml);
       }
@@ -437,23 +446,45 @@
         return vars;
       }
 
+      // function getReply(caseid, question) {
+      //   $.post(
+      //     "http://127.0.0.1:8080/apiQuery",
+      //     {
+      //       caseId: caseid,
+      //       query: question,
+      //     },
+      //     function (data, status) {
+      //       console.log(data);
+      //       console.log(status);
+      //       //test and update
+      //       var aMsg = { name: "Agent", msg: data };
+      //       MsgArr.push(aMsg);
+      //       SetChatHistory();
+      //       // alert("Data: " + data + "\nStatus: " + status);
+      //     }
+      //   );
+      // }
+
       function getReply(caseid, question) {
-        $.post(
-          "http://127.0.0.1:8080/apiQuery",
-          {
-            caseId: caseid,
-            query: question,
-          },
-          function (data, status) {
-            console.log(data);
-            console.log(status);
-            //test and update
-            var aMsg = { name: "Agent", msg: data };
-            MsgArr.push(aMsg);
-            SetChatHistory();
-            // alert("Data: " + data + "\nStatus: " + status);
-          }
-        );
+        $.ajax({
+          url:
+            "http://127.0.0.1:8080/apiQuery?caseId=" +
+            caseid +
+            "&query=" +
+            question,
+          crossDomain: true,
+          method: "post",
+          headers: { accept: "application/json" },
+          contentType: "application/x-www-form-urlencoded",
+          data: "",
+        }).done(function (response) {
+          console.log(response);
+          var aMsg = { name: "Agent", msg: response }; // add this line
+          MsgArr.push(aMsg);
+          console.log(response);
+          // add this line
+          SetChatHistory(); // add this line
+        });
       }
 
       function loadCase1(caseid, fileName) {
@@ -503,8 +534,8 @@
       <div class="app-container">
         <header class="header-fixed nav-bar-head">
           <div class="logo-account-hold">
-            <div class="left-app-logo">
-              <img
+            <div class="left-app-logo d-flex align-items-center">
+              <!-- <img
                 src="images/logo-application.png"
                 alt="Legal Research Assistant"
                 title="Legal Research Assistant"
@@ -515,7 +546,19 @@
                 alt="Wipro"
                 title="Wipro"
                 class="logo-parent"
+              /> -->
+              <img
+                src="images/Wipro_Logo_Secondary_White_Digital.png"
+                alt="Wipro"
+                title="Wipro"
+                class="logo-parent ml-0 mr-2"
               />
+              <h4 class="text-white mb-0">
+                Legal Research Assistant<sub
+                  style="font-size: 0.8rem; margin-left: 10px"
+                  >Powered by Intel® Core™ Ultra Processor</sub
+                >
+              </h4>
             </div>
             <div class="right-app-account">
               <div class="notify-hold user-hold">
@@ -566,9 +609,9 @@
           <!-- logo-account-hold -->
           <div class="main-menu-section">
             <ul class="nav-dark">
-              <li><a href="home.html" class="active">Home</a></li>
-              <li><a href="dashboard.html">Dashboard</a></li>
-              <li><a href="summary.html">Summary</a></li>
+              <li><a href="home.html" class="active">my hub</a></li>
+              <li><a href="dashboard.html">legal cases</a></li>
+              <li><a href="summary.html">legal answer engine</a></li>
             </ul>
           </div>
         </header>
@@ -612,7 +655,7 @@
 
                                 <div class="col-12 chaat" id="divChat">
                                   <h3 style="padding: 15px" class="Chattop">
-                                    Chat with the Document
+                                    Legal Annswer Engine
                                   </h3>
                                   <div class="chat-container">
                                     <div class="chat-history" id="divChatLog">
@@ -628,7 +671,7 @@
                                         <strong style="color: white"
                                           >Agent : &nbsp;</strong
                                         >
-                                        <div class="loader"></div>
+                                        <!-- <div class="loader"></div> -->
                                       </div>
                                     </div>
 
@@ -698,15 +741,15 @@
               >
                 <div class="modal-dialog modal-xl">
                   <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header d-flex justify-content-center">
                       <h5 class="modal-title" id="exampleModalLabel">
                         Summary
                       </h5>
                     </div>
-                    <div class="modal-body">
-                      <p id="lblSummary"></p>
+                    <div class="modal-body d-flex flex-column" id="lblSummary">
+                      <!-- <p id="lblSummary"></p> -->
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer d-flex justify-content-center">
                       <button
                         type="button"
                         class="btn btn-secondary"
@@ -720,9 +763,10 @@
               </div>
             </div>
             <footer class="tne-app-footer">
-              <div class="footer-custom">
-                <p>Copyright &copy; 2021-2022. All rights reserved.</p>
-                <p><span class="mr-2">WIPRO Legal Research Assistant</span></p>
+              <div class="footer-custom d-flex justify-content-center">
+                <p>&copy; 2024 Wipro Ltd. All rights reserved.</p>
+                <!-- 2024 Wipro Ltd, Inc -->
+                <!-- <p><span class="mr-2">WIPRO Legal Research Assistant</span></p> -->
               </div>
             </footer>
           </div>

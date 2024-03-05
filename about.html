@@ -1,246 +1,747 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Legal Research Assistant</title>
-		<link rel="stylesheet" href="css/common-style.css">
-		<link rel="stylesheet" href="css/themify-icons.css">
-		
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-		
-		<!-- bootstrap js -->		
-		<script src="js/jquery.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.bundle.js"></script> 
-		
-		<!-- Google Red Hat Display -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
-		
-		<!-- Fontawesome -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		
-		<!-- Multi Select css and JS -->
-		<script type="text/javascript" src="assets/js/bootstrap-multiselect.js"></script>
-		<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
-		
-		<!-- Data table code -->
-		<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script> 
-		<script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script> 
-		<script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script> 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script> 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script> 
-		<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script> 
-		<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script> 
-		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
-	</head>
-	<body>
-		<div class="wrapper">
-			<div class="app-container">
-				<header class="header-fixed nav-bar-head">
-					<div class="logo-account-hold">
-						<div class="left-app-logo">
-							<img src="images/logo-application.png" alt="Legal Research Assistant" title="Legal Research Assistant" class="logo-main" />
-							<img src="images/wipro-logo.png" alt="Wipro" title="Wipro" class="logo-parent" />
-						</div>
-						<div class="right-app-account">
-							<div class="notify-hold user-hold">
-								<div class="user-sec">
-									<div class="account-right">
-										<ul>
-											<li>
-												<ul id="menu-log">
-													<li>
-														<input id="check01" type="checkbox" name="menu">
-														<label for="check01"><span class="uname-dp">AB</span>Aditya Bhuvan</label>
-														<ul class="submenu">
-															<li><div class="submenu-dp">AB</div></li>
-															<li><a href="profile.html"><span><i class="fa fa-user" aria-hidden="true"></i></span>My Profile</a></li>
-															<li><a href="login.html"><span><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logout</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div><!-- right-app-account -->
-					</div><!-- logo-account-hold -->
-					<div class="main-menu-section">
-						<ul class="nav-dark">
-							<li><a href="home.html">Home</a></li>
-							<li><a href="dashboard.html" class="">Dashboard</a></li>
-							<li><a href="summary.html" class="">Summary</a></li>
-							<li><a href="about.html" class="active">About</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Legal Research Assistant</title>
+    <link rel="stylesheet" href="css/common-style.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
 
-						</ul>
-					</div>
-				</header>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
 
-				<!--Change Code Use Bootstrap-->
-				<main class="body-wrapper">
-					<div class="content-wrapper right-main-containr">
-						<h2 class="page-head">About Legal Assistant</h2>
-						<p>Welcome to our innovative application designed to revolutionize your legal research experience. As a dedicated AI legal research assistant, we aim to streamline and simplify your professional journey with our robust and intuitive features.</p>
-						<div class="main-data-hold">
+    <!-- bootstrap js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <!-- Google Red Hat Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Multi Select css and JS -->
+    <script
+      type="text/javascript"
+      src="assets/js/bootstrap-multiselect.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="css/bootstrap-multiselect.css"
+      type="text/css"
+    />
+
+    <!-- Data table code -->
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="app-container">
+        <header class="header-fixed nav-bar-head">
+          <div class="logo-account-hold">
+            <div class="left-app-logo">
+              <img
+                src="images/logo-application.png"
+                alt="Legal Research Assistant"
+                title="Legal Research Assistant"
+                class="logo-main"
+              />
+              <img
+                src="images/wipro-logo.png"
+                alt="Wipro"
+                title="Wipro"
+                class="logo-parent"
+              />
+            </div>
+            <div class="right-app-account">
+              <div class="notify-hold user-hold">
+                <div class="user-sec">
+                  <div class="account-right">
+                    <ul>
+                      <li>
+                        <ul id="menu-log">
+                          <li>
+                            <input id="check01" type="checkbox" name="menu" />
+                            <label for="check01"
+                              ><span class="uname-dp">AB</span>Aditya
+                              Bhuvan</label
+                            >
+                            <ul class="submenu">
+                              <li>
+                                <div class="submenu-dp">AB</div>
+                              </li>
+                              <li>
+                                <a href="profile.html"
+                                  ><span
+                                    ><i
+                                      class="fa fa-user"
+                                      aria-hidden="true"
+                                    ></i></span
+                                  >My Profile</a
+                                >
+                              </li>
+                              <li>
+                                <a href="login.html"
+                                  ><span
+                                    ><i
+                                      class="fa fa-sign-out"
+                                      aria-hidden="true"
+                                    ></i></span
+                                  >Logout</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- right-app-account -->
+          </div>
+          <!-- logo-account-hold -->
+          <div class="main-menu-section">
+            <ul class="nav-dark">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="dashboard.html" class="">Dashboard</a></li>
+              <li><a href="summary.html" class="">Summary</a></li>
+              <li><a href="about.html" class="active">About</a></li>
+            </ul>
+          </div>
+        </header>
+
+        <main class="body-wrapper">
+          <div class="container">
+            <div class="box1">
+              <h2 style="text-align: center; color: black">
+                About Legal Assistant
+              </h2>
+              <p style="text-align: justify; color: #87878d">
+                Welcome to our innovative application designed to revolutionize
+                your legal research experience. As a dedicated AI legal research
+                assistant, we aim to streamline and simplify your professional
+                journey with our robust and intuitive features.
+              </p>
+            </div>
+            <div class="marquee-container">
+              <marquee behavior="scroll" direction="right">
+                <img
+                  class="marquee-img"
+                  src="images/restime.gif"
+                  alt="Image 1"
+                  style="width: 250px; height: auto"
+                />
+                <img
+                  class="marquee-img"
+                  src="images/docs.png"
+                  alt="Image 2"
+                  style="width: 250px; height: auto"
+                />
+                <img
+                  class="marquee-img"
+                  src="images/bot.png"
+                  alt="Image 3"
+                  style="width: 250px; height: auto"
+                />
+                <img
+                  class="marquee-img"
+                  src="images/Schedule.gif"
+                  alt="Image 4"
+                  style="width: 250px; height: auto"
+                />
+              </marquee>
+            </div>
+
+            <br />
+            <div class="box" id="eventCalendar">
+              <div
+                class="split"
+                style="display: flex; justify-content: space-between"
+              >
+                <div class="right" style="width: 30%">
+                  <img
+                    src="images/calendar.gif"
+                    alt="Event"
+                    style="
+                      max-width: 80%;
+                      border-radius: 10%;
+                      border: 2px solid #ffffff;
+                    "
+                  />
+                </div>
+                <div class="left" style="width: 70%; text-align: left">
+                  <p style="text-align: justify; color: #87878d">
+                    Our platform is designed with a user-friendly interface
+                    where lawyers have access to a personalized homepage. This
+                    homepage provides comprehensive details about their
+                    professional profile, including the status of their cases -
+                    won, lost, or in-progress. Additionally, an integrated event
+                    calendar keeps you updated with all your upcoming events.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <p style="text-align: justify; color: #87878d">
+                One of our unique features is the Workspace page. Here, you can
+                access a list of documents relevant to a particular case with
+                just a simple click on the case number from the homepage. The
+                Workspace page is your personal interactive space where you can
+                select any document from the list to gain insights.
+              </p>
+            </div>
+            <br />
+            <div
+              class="icon-container"
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: absolute;
+                left: 0;
+                top: 10%;
+                padding: 20px;
+              "
+            >
+              <img
+                class="icon"
+                id="icon1"
+                src="images/calicon.png"
+                alt="Icon 1"
+                onclick="location.href='#eventCalendar'"
+                style="width: 50px; height: 50px; margin-bottom: 20px"
+              />
+              <img
+                class="icon"
+                id="icon4"
+                src="images/metricsicon.png"
+                alt="Icon 4"
+                onclick="location.href='#metrics'"
+                style="width: 50px; height: 50px; margin-bottom: 20px"
+              />
+              <img
+                class="icon"
+                id="icon2"
+                src="images/chaticon.png"
+                alt="Icon 2"
+                onclick="location.href='#chatWithAssistant'"
+                style="width: 45px; height: 45px; margin-bottom: 20px"
+              />
+              <img
+                class="icon"
+                id="icon3"
+                src="images/sumicon.png"
+                alt="Icon 3"
+                onclick="location.href='#getSummary'"
+                style="width: 50px; height: 50px; margin-bottom: 20px"
+              />
+            </div>
+
+            <div>
+              <!-- <div class="container">
 
 
-							<div class="marquee-container">
-								<marquee behavior="scroll" direction="right">
-									<img class="marquee-img" src="images/restime.gif" alt="Image 1" style="width: 250px; height: auto;">
-									<img class="marquee-img" src="images/docs.png" alt="Image 2" style="width: 250px; height: auto;">
-									<img class="marquee-img" src="images/bot.png" alt="Image 3" style="width: 250px; height: auto;">
-									<img class="marquee-img" src="images/Schedule.gif" alt="Image 4" style="width: 250px; height: auto;">
-								</marquee>
-							</div>
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <img src="images/os.png" class="img-fluid" style="width: 30%;">
+                                </div>
+                                <div class="col-6 text-center">
+                                    <img src="images/Selected photo.png" class="img-fluid" style="width: 30%;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden; display: flex; justify-content: center; align-items: center; border: 2px solid #87878d;; margin: auto;">
+                                        <img src="images/desktop-computer (1).png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <img src="images/processor.png" class="img-fluid" style="width: 30%;">
+                                </div>
+                                <div class="col-6 text-center">
+                                    <img src="images/64-bit.png" class="img-fluid" style="width: 28%;">
+                                </div>
+                            </div>
 
-							<br>
-							<div class="box" id="eventCalendar">
-								<div class="split" style="display: flex;  justify-content: space-between;">
-									<div class="right" style="width: 30%;">
-										<img src="images/calendar.gif" alt="Event" style="max-width:80%;  border-radius: 10%;  border: 2px solid #ffffff;">
-									</div>
-									<div class="left" style="width: 70%;  text-align: left;">
-										<p style="text-align: left; color: #87878d;">Our platform is designed with a user-friendly interface where lawyers have access to a personalized homepage. This homepage provides comprehensive details about their professional profile, including the status of their cases - won, lost, or in-progress. Additionally, an integrated event calendar keeps you updated with all your upcoming events.</p>
-									</div>
-								</div>
-							</div>
-							<div class="box">
-								<p style="text-align: left; color: #87878d;">One of our unique features is the Workspace page. Here, you can access a list of documents relevant to a particular case with just a simple click on the case number from the homepage. The Workspace page is your personal interactive space where you can select any document from the list to gain insights.</p>
-							</div>
-							<br>
-							<div class="icon-container" style="display: flex;  flex-direction: column;  justify-content: space-between;  position: absolute;  left: 0;  top: 10%; padding: 20px;">
-								<img class="icon" id="icon1" src="images/calicon.png" alt="Icon 1" onclick="location.href='#eventCalendar'" style="width:50px;height:50px;margin-bottom: 20px;">
-								<img class="icon" id="icon4" src="images/metrics.png" alt="Icon 4" onclick="location.href='#getSummary'" style="width:50px;height:50px;margin-bottom: 20px;">
-								<img class="icon" id="icon2" src="images/chaticon.png" alt="Icon 2" onclick="location.href='#chatWithAssistant'" style="width:45px;height:45px;margin-bottom: 20px;">
-								<img class="icon" id="icon3" src="images/sumicon.png" alt="Icon 3" onclick="location.href='#getSummary'" style="width:50px;height:50px;margin-bottom: 20px;">
-							</div>
+                            <div class="line line1"></div>
+                            <div class="line line2"></div>
+                            <div class="line line3"></div>
+                            <div class="line line4"></div>
 
-						
-							<div class="box">
-								<h2 style="text-align: center; color: black;">Now, let's delve deeper into the key features of our Assistant</h2>
-							</div>
+                        </div>   -->
+              <div class="col-12 text-center">
+                <img
+                  src="images/specs.png"
+                  class="img-fluid"
+                  style="width: 70%; align-items: center"
+                />
+              </div>
+            </div>
+            <div class="mb-5"></div>
 
-							<h2 style="text-align: center;">Meteor Lake Client Platform</h2>
+            <div class="box">
+              <h2 id="metrics" style="text-align: center; color: black">
+                Now, let's delve deeper into the key features of our Assistant
+              </h2>
+            </div>
 
-							<div class="tables-container" style="display: flex; ">
+            <h2 style="text-align: center">Meteor Lake Client Platform</h2>
 
-								<div class="table-container" style="align-items: center;">
-									<table style="width: 100%;">
-										<thead>
-											<tr>
-												<th colspan="2" style="border: 1px solid black;  padding: 8px;  text-align: center; background-color: #f2f2f2;">Models Specifications</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Chat</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">openvino-llm-chatbot-rag\Llama-2-7b-chat-hf\FP16</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Summary</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Falconsai/text_summarization</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Chat Embedding</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">jinaai-text-embeddings-v2-base</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Vector Store</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">ChromaDB</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Input token size</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">9</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Output size</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">39</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Tokenization Time</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">0.74ms</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Detokenization Time</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">0.38ms</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Generation Time</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">7.12s</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Latency</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">182.67 ms/token</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">First token latency</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">352.27 ms/token</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">First infer latency</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">350.56 ms/infer</td>
-											</tr>
-											<tr>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">Tokenization Time</td>
-												<td style="border: 1px solid black;  padding: 8px;  text-align: left;">0.74ms</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
+            <div class="d-flex justify-content-center">
+              <div class="tables-container" style="display: flex">
+                <div class="table-container" style="align-items: center">
+                  <style>
+                    td,
+                    tr {
+                      color: #87878d;
+                    }
+                  </style>
+                  <table style="width: 100%">
+                    <thead>
+                      <tr>
+                        <th
+                          colspan="2"
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: center;
+                            background-color: #f2f2f2;
+                            color: #000000;
+                          "
+                        >
+                          Models Specifications
+                        </th>
+                      </tr>
+                    </thead>
 
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Chat
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          openvino-llm-chatbot-rag\Llama-2-7b-chat-hf\FP16
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Summary
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Falconsai/text_summarization
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Chat Embedding
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          jinaai-text-embeddings-v2-base
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Vector Store
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          ChromaDB
+                        </td>
+                      </tr>
+                      <tr>
+                        <th
+                          colspan="2"
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: center;
+                            background-color: #f2f2f2;
+                            color: #000000;
+                          "
+                        >
+                          Performance Metrics
+                        </th>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Input token size
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          9
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Output size
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          39
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Tokenization Time
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          0.74ms
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Detokenization Time
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          0.38ms
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Generation Time
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          7.12s
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Latency
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          182.67 ms/token
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          First token latency
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          352.27 ms/token
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          First infer latency
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          350.56 ms/infer
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          Tokenization Time
+                        </td>
+                        <td
+                          style="
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          "
+                        >
+                          0.74ms
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="mb-5"></div>
 
+            <div class="box">
+              <div
+                class="split"
+                style="display: flex; justify-content: space-between"
+              >
+                <div class="left" style="width: 70%; text-align: left">
+                  <h3
+                    id="chatWithAssistant"
+                    style="text-align: left; color: black"
+                  >
+                    Chat with Assistant
+                  </h3>
+                  <h4
+                    style="text-align: left; color: #87878d; font-style: italic"
+                  >
+                    (Chat with Assistant to get insights about the case
+                    documents)
+                  </h4>
 
+                  <p style="text-align: justify; color: #87878d">
+                    Utilizing state-of-the-art technology, our Chat feature
+                    allows you to interact directly with your case documents.
+                    Our Retriever-and-Generator (RAG) system employs Jina AI's
+                    jinaai-text-embeddings-v2-base for text embedding. Text is
+                    converted into vector representations for effective data
+                    processing. These vectors are stored in a specialized
+                    database for efficient and quick retrieval. The Llama 2 7B
+                    model, a key component of the RAG system, processes these
+                    vectors. The model is optimized using Intel's OpenVINO
+                    toolkit, enhancing the speed and efficiency of inferencing.
+                    This optimization significantly reduces the inference time
+                    to just 7 seconds.
+                  </p>
+                </div>
+                <div class="right" style="width: 30%">
+                  <img
+                    src="images/convo.gif"
+                    alt="Chat"
+                    style="
+                      max-width: 80%;
+                      border-radius: 10%;
+                      border: 2px solid #ffffff;
+                    "
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="mb-5"></div>
 
-							<div class="box">
-								<div class="split" style="display: flex; justify-content: space-between;">
-									<div class="left" style="width: 70%;  text-align: left;">
-										<h3 id="chatWithAssistant" style="text-align: left; color: black;">Chat with Assistant</h3>
-										<h4 style="text-align: left; color: #87878d; font-style: italic; ">(Chat with Assistant to get insights about the case documents)</h4>
-
-										<p style="text-align: left; color: #87878d;">Utilizing state-of-the-art technology, our Chat feature allows you to interact directly with your case documents. Our Retriever-and-Generator (RAG) system employs Jina AI's jinaai-text-embeddings-v2-base for text embedding. Text is converted into vector representations for effective data processing. These vectors are stored in a specialized database for efficient and quick retrieval. The Llama 2 7B model, a key component of the RAG system, processes these vectors. The model is optimized using Intel's OpenVINO toolkit, enhancing the speed and efficiency of inferencing. This optimization significantly reduces the inference time to just 7 seconds.</p>
-									</div>
-									<div class="right" style="width: 30%;">
-										<img src="images/convo.gif" alt="Chat" style="max-width:80%;  border-radius: 10%;  border: 2px solid #ffffff;">
-									</div>
-								</div>
-							</div>
-
-
-
-
-
-							<div class="box">
-								<div class="split" style="display: flex; justify-content: space-between;">
-									<div class="right" style="width: 30%;">
-										<img src="images/docs2.gif" alt="Summary" style="max-width:80%;  border-radius: 10%;  border: 2px solid #ffffff;">
-									</div>
-									<div class="left" style="width: 70%;  text-align: left;">
-										<h3 id="getSummary" style="text-align: left; color: black;">Get Summary</h3>
-										<h4 style="text-align: left; color: #87878d; font-style: italic; ">(Get summary about the case documents)</h4>
-										<p style="text-align: left; color: #87878d;">Our unique "Get Summary" feature uses the Falconsai/text_summarization model to condense lengthy legal case documents into clear and concise summaries. The model was specifically chosen due to its excellent performance in summarizing extensive documents. It is ideally suited for applications that involve condensing comprehensive legal texts, enabling users to quickly understand the key points of the documents without having to read through the entire text. The use of this model significantly enhances efficiency in the legal sector.</p>
-									</div>
-								</div>
-							</div>
-							<div class="box2">
-								<p style="text-align: left; color: #87878d;">Our tech stack is a blend of cutting-edge technologies, and our application is designed with an eye for simplicity and efficiency. Our commitment is to continually innovate and improve, keeping your professional needs at the forefront of our development journey. Join us in embracing the future of legal research.</p>
-							</div>
-						</div>
-						<footer class="tne-app-footer">
-							<div class="footer-custom"><p>Copyright &copy; 2021-2022. All rights reserved.</p> <p><span class="mr-2">WIPRO Legal Research Assistant</span></p></div>
-						</footer>
-
-				</main>
-		</div>
-		</div>
-		
-	</body>
-</html>											
+            <div class="box">
+              <div
+                class="split"
+                style="display: flex; justify-content: space-between"
+              >
+                <div class="right" style="width: 30%">
+                  <img
+                    src="images/docs2.gif"
+                    alt="Summary"
+                    style="
+                      max-width: 80%;
+                      border-radius: 10%;
+                      border: 2px solid #ffffff;
+                    "
+                  />
+                </div>
+                <div class="left" style="width: 70%; text-align: left">
+                  <h3 id="getSummary" style="text-align: left; color: black">
+                    Get Summary
+                  </h3>
+                  <h4
+                    style="text-align: left; color: #87878d; font-style: italic"
+                  >
+                    (Get summary about the case documents)
+                  </h4>
+                  <p style="text-align: justify; color: #87878d">
+                    Our unique "Get Summary" feature uses the
+                    Falconsai/text_summarization model to condense lengthy legal
+                    case documents into clear and concise summaries. The model
+                    was specifically chosen due to its excellent performance in
+                    summarizing extensive documents. It is ideally suited for
+                    applications that involve condensing comprehensive legal
+                    texts, enabling users to quickly understand the key points
+                    of the documents without having to read through the entire
+                    text. The use of this model significantly enhances
+                    efficiency in the legal sector.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="box2">
+              <p style="text-align: justify; color: #87878d">
+                Our tech stack is a blend of cutting-edge technologies, and our
+                application is designed with an eye for simplicity and
+                efficiency. Our commitment is to continually innovate and
+                improve, keeping your professional needs at the forefront of our
+                development journey. Join us in embracing the future of legal
+                research.
+              </p>
+            </div>
+          </div>
+        </main>
+        <footer class="tne-app-footer">
+          <div class="footer-custom">
+            <p>Copyright &copy; 2021-2022. All rights reserved.</p>
+            <p><span class="mr-2">WIPRO Legal Research Assistant</span></p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

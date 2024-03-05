@@ -1,111 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Legal Research Assistant</title>
-		<link rel="stylesheet" href="css/login-style.css">
-		<link rel="stylesheet" href="css/themify-icons.css">
-		
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-		
-		<!-- bootstrap js -->		
-		<script src="js/jquery.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.bundle.js"></script> 
-		
-		<!-- Google Red Hat Display -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
-		
-		<!-- Fontawesome -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="js/common.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Legal Research Assistant</title>
+    <link rel="stylesheet" href="css/login-style.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
 
-		<script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
 
-			$(document).ready(function () {
+    <!-- bootstrap js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
 
-				$("#btnLogin").click(function () {
-					var aUsrId = $("#txtUsrId").val();
-					var aPwd = $("#txtPwd").val();
+    <!-- Google Red Hat Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
 
-					if (aUsrId != "" || aPwd != "") {
-						//Login API/Logic
-						var IsValid = false;
-						$.each(UserList, function (i, user) {
-							if (aUsrId == user.email && aPwd == user.password) {
-								IsValid = true;
-								return;
-							}
-						});
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Fontawsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-						if (IsValid) {
-							setCookie("user-id", aUsrId);
-							location.href = "Home.html";
-						}
-						else {
-							alert("Invalid Credential");
-						}
-					}
-					else {
-						alert("Enter Credentials");
-					}
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-				});
+    <script src="js/common.js"></script>
 
-			});
+    <script>
+      $(document).ready(function () {
+        $("#btnLogin").click(function () {
+          var aUsrId = $("#txtUsrId").val();
+          var aPwd = $("#txtPwd").val();
 
+          if (aUsrId != "" || aPwd != "") {
+            //Login API/Logic
+            var IsValid = false;
+            $.each(UserList, function (i, user) {
+              if (aUsrId == user.email && aPwd == user.password) {
+                IsValid = true;
+                return;
+              }
+            });
 
+            if (IsValid) {
+              setCookie("user-id", aUsrId);
+              location.href = "Home.html";
+            } else {
+              alert("Invalid Credential");
+            }
+          } else {
+            alert("Enter Credentials");
+          }
+        });
+      });
 
-          
+      function ShowPwd(uid) {
+        var upwd = "";
+        $.each(UserList, function (i, user) {
+          if (user.email == uid) {
+            upwd = user.password;
+          }
+        });
+        return upwd;
+      }
+    </script>
+    <script type="text/javascript">
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+    </script>
+  </head>
+  <body>
+    <div class="wrapper-login">
+      <div class="login-wrapper">
+        <div class="login-hold-inn">
+          <div class="login-area-hold">
+            <div class="logo-sec">
+              <img
+                src="images/logo-application.png"
+                alt="Legal Research Assistant"
+                class="login-logo"
+              />
+            </div>
 
-		</script>
+            <div class="cred-details">
+              <div class="row-hold">
+                <div class="form-group chm-formgroup">
+                  <input
+                    type="text"
+                    class="form-control chm-forminput"
+                    id="txtUsrId"
+                    placeholder="User Name"
+                    value=""
+                  />
+                </div>
+              </div>
 
+              <div class="row-hold">
+                <div class="form-group chm-formgroup">
+                  <input
+                    type="password"
+                    class="form-control chm-forminput"
+                    id="txtPwd"
+                    placeholder="Password"
+                    value=""
+                  />
+                </div>
+              </div>
 
-		
-	</head>
-	<body>
-		<div class="wrapper-login">
-			<div class="login-wrapper">
-				<div class="login-hold-inn">
-					<div class="login-area-hold">
-						<div class="logo-sec">
-							<img src="images/logo-application.png" alt="Legal Research Assistant" class="login-logo">
-						</div>
-						
-						<div class="cred-details">
-							<div class="row-hold">
-								<div class="form-group chm-formgroup">																		
-									<input type="text" class="form-control chm-forminput" id="txtUsrId" placeholder="User Name" value="">
-								</div>
-							</div>
-							
-							<div class="row-hold">
-								<div class="form-group chm-formgroup">																		
-									<input type="password" class="form-control chm-forminput" id="txtPwd" placeholder="Password" value="">
-								</div>
-							</div>
-							
-							<div class="row-hold">
-								<a href="#" class="textlink-sm">Forgot Password?</a>
-							</div>
-							
-							<div class="row-hold">
-								<a href="#"  class="btn btn-primary button-blue"  id="btnLogin" >login</a>
-							</div>
-							
-							<div class="row-hold">
+              <div class="row-hold">
+                <a href="#" class="textlink-sm" id="forgot">Forgot Password?</a>
+              </div>
+
+              <div class="row-hold">
+                <a href="#" class="btn btn-primary button-blue" id="btnLogin"
+                  >Login</a
+                >
+              </div>
+
+              <!-- <div class="row-hold">
 								<p class="inline-signup">Don't have an account? <a href="#" class="textlink-md">Sign Up</a></p>
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+							</div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-hold">
+      <!-- <a href="#" class="textlink-sm">Forgot Password?</a> -->
+
+      <div
+        class="modal fade"
+        id="myModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="myModalLabel">Enter User ID</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                id="close"
+                style="
+                  background-color: #252560;
+                  color: white;
+                  border: none;
+                  border-radius: 5px;
+                  padding: 5px 10px;
+                "
+              >
+                <span aria-hidden="true"
+                  ><i class="fa-solid fa-xmark"></i
+                ></span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input
+                type="text"
+                id="userID"
+                class="form-control"
+                placeholder="User ID"
+              />
+              <p
+                id="passwordDisplay"
+                style="
+                  display: none;
+                  border: 1px solid gray;
+                  margin-top: 10px;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                  background-color: rgb(2, 73, 2);
+                  color: white;
+                "
+              >
+                Current Password: <span id="password"></span>
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                style="
+                  background-color: #252560;
+                  color: white;
+                  border: none;
+                  border-radius: 5px;
+                  padding: 5px 10px;
+                "
+                id="submitBtn"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          // $("#submitBtn").click(function () {
+          //   var userID = $("#userID").val();
+          //   if (userID) {
+          //     $("#password").text("Demo123");
+          //     $("#passwordDisplay").show();
+          //   } else {
+          //     alert("Please enter User ID");
+          //   }
+          // });
+          $("#submitBtn").click(function () {
+            var apwd = ShowPwd($("#userID").val());
+            console.log(apwd);
+            $("#passwordDisplay").show();
+            $("#password").text(apwd);
+          });
+
+          $("#forgot").click(function () {
+            $("#userID").val("");
+            $("#password").val("");
+            //Show hide
+            $("#passwordDisplay").hide();
+            $("#myModal").modal("show");
+          });
+
+          $("#close").click(function () {
+            $("#myModal").modal("hide");
+          });
+        });
+      </script>
+    </div>
+  </body>
 </html>

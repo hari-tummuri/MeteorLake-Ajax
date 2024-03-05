@@ -342,14 +342,37 @@ function DoAuth() {
     $.each(UserList, function (i, user) {
       if (user.email == aUserId) {
         aUserNm = user.profileName;
-        aUserDp = user.profileDp;
+        aUserDp = user.profileimage;
       }
     });
-    $(".submenu-dp").html(aUserDp);
+    // $(".submenu-dp").html(aUserDp);
+    // $("[for=check01]").html(
+    //   "<span class='uname-dp'>" + aUserDp + "</span>" + aUserNm
+    // );
+    $(".submenu li")
+      .eq(0)
+      .html("<img width='230'  src='" + aUserDp + "'/>");
     $("[for=check01]").html(
-      "<span class='uname-dp'>" + aUserDp + "</span>" + aUserNm
+      "<img  height='30' style='border-radius: 50%;margin-right:10px' src='" +
+        aUserDp +
+        "'/>" +
+        aUserNm
     );
   }
+  var aRssHtm = "";
+  $.each(rssFeed, function (i, feedt) {
+    aRssHtm +=
+      "<span  style='color:white;'>&nbsp;||&nbsp;" + feedt.title + "</span>";
+  });
+  if (aRssHtm == "") {
+    aRssHtm = "<span style='color:white;'>Feed Not Available</span>";
+  }
+  aRssHtm =
+    "<li style='width:50%!important;'> <marquee direction='left' >" +
+    aRssHtm +
+    "</marquee></li>";
+
+  $(".main-menu-section>.nav-dark").append(aRssHtm);
 }
 
 function getCookie(cname) {
@@ -373,3 +396,24 @@ function setCookie(cname, cvalue, exdays) {
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+rssFeed = [
+  {
+    title:
+      "Controversial Electoral Bond Schemes Sparks Constitutional Concerns",
+    details:
+      "Author – Arpit Garg (IMS Unison University, Dehradun) Co-Author – Daksh Sharma (IMS Unison University, Dehradun) Introduction:- On February 15, a bench of five judges headed by Chief Justice DY Chandrachud declared the electoral bond unconstitutional, citing violations of the right to information and Article 19(1)(a) of the Indian Constitution, which guarantees freedom of speech.",
+  },
+  {
+    title:
+      "The Surge of Cyber Crimes: Unraveling 10 Reasons Behind the Alarming Increase",
+    details:
+      "Introduction: In an era dominated by technology, the exponential growth of cyber crimes has become a grave concern for individuals, businesses, and governments alike. The digital landscape, while offering unprecedented connectivity and convenience, has also become a breeding ground for malicious activities. In this comprehensive article, we will delve into the ten key reasons behind",
+  },
+  {
+    title:
+      "Law Student Urges Chief Justice and Secretary-General to Embrace Eco-Friendly Practices: Calls for Nationwide Adoption of Double-Sided A4 Paper in Judicial Forums",
+    details:
+      "Vikhyaat Maheshwari, a 3rd year law student, writes a letter to the Hon’ble Chief Justice D.Y. Chandrachud and the Secretary-General Atul M. Kurhekar, emphasising the need for uniformity in the usage of A4 papers with printing on both sides across all the judicial forums of the country, keeping in mind the tremendous environmental and legal",
+  },
+];
