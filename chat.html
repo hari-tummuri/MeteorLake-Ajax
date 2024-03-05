@@ -368,9 +368,7 @@
         console.log(arrFile);
         $.each(arrFile, function (i, file) {
           aFilesHtm +=
-            "<a href='#'  class='badge badge-light p-2 m-1 casefile'>" +
-            file +
-            "</a>";
+            "<a href='#'  class='text-white p-2 m-1 casefile'>" + file + "</a>";
         });
         $("#divFileList").html(aFilesHtm);
         $("#divFiles").show();
@@ -478,10 +476,10 @@
           contentType: "application/x-www-form-urlencoded",
           data: "",
         }).done(function (response) {
-          console.log(response);
-          var aMsg = { name: "Agent", msg: response }; // add this line
+          console.log(response.response);
+          var aMsg = { name: "Agent", msg: response.response }; // add this line
           MsgArr.push(aMsg);
-          console.log(response);
+          console.log(response.response);
           // add this line
           SetChatHistory(); // add this line
         });
@@ -533,7 +531,7 @@
     <div class="wrapper">
       <div class="app-container">
         <header class="header-fixed nav-bar-head">
-          <div class="logo-account-hold">
+          <div class="logo-account-hold" style="height: 70%">
             <div class="left-app-logo d-flex align-items-center">
               <!-- <img
                 src="images/logo-application.png"
@@ -553,12 +551,12 @@
                 title="Wipro"
                 class="logo-parent ml-0 mr-2"
               />
-              <h4 class="text-white mb-0">
+              <h3 class="text-white mb-0">
                 Legal Research Assistant<sub
                   style="font-size: 0.8rem; margin-left: 10px"
                   >Powered by Intel® Core™ Ultra Processor</sub
                 >
-              </h4>
+              </h3>
             </div>
             <div class="right-app-account">
               <div class="notify-hold user-hold">

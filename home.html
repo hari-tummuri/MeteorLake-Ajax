@@ -241,6 +241,22 @@
             console.log(aEv.date);
             console.log(aFDate);
 
+            var aAllEvt = "";
+            var aEcount = 0;
+            $.each(aEvents, function (i, evt) {
+              if (evt.datestr == aFDate) {
+                if (aEcount > 0) {
+                  aAllEvt +=
+                    "case: " +
+                    evt.caseNo +
+                    "&nbsp;&nbsp;time: " +
+                    evt.startTime +
+                    "\n";
+                }
+                aEcount++;
+              }
+            });
+
             if (aEv.date == aFDate) {
               console.log("okkkk");
               aCalHtml +=
@@ -254,9 +270,15 @@
                 aEv.case +
                 "</strong></p> <span class='pl-2'> <i class='fa fa-hourglass' aria-hidden='true'></i></span><p>" +
                 aEv.time +
-                "</p> <span class='badge  ml-3' style='background-color:#1e1e4b;border:none;border-radius:5px;'> +" +
-                aEv.evts +
-                "</span> </div>" +
+                "</p>" +
+                (aEv.evts > 0
+                  ? " <span class='badge  ml-3' title='" +
+                    aAllEvt +
+                    "' style='background-color:#1e1e4b;border:none;border-radius:5px;'> +" +
+                    aEv.evts +
+                    "</span> "
+                  : "") +
+                "</div>" +
                 "</div>" +
                 "</div>" +
                 "</div>";
@@ -272,7 +294,7 @@
               "<div class='casedate'><h6>" +
               aFDate +
               "</h6></div>" +
-              "<div class='casenote'><span><i class='fa fa-gavel' aria-hidden='true'></i></span><p><strong>No Case</strong></p> <span class='pl-2'> <i class='fa fa-hourglass' aria-hidden='true'></i></span><p>-:-</p>  </div>" +
+              "<div class='casenote'><p><strong>No Events</strong></p></div>" +
               "</div>" +
               "</div>" +
               "</div>";

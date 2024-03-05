@@ -5879,11 +5879,12 @@ justify-content: center; border-radius: 2px; margin-right: 5px; font-size: 13.5p
 
 .cases-status-wrapper .cases-hold {
     width: 100%;
-    background: #11113a;
+    /* background: #11113a; */
+    background-image: linear-gradient(to right, #0e0e6e, #1c1c43);
     padding:20px;
     box-sizing: border-box;
     border-radius: 3px;
-    margin: 40px 0px 20px 0px;
+    margin: 13px 0px 20px 0px;
     display: flex;
 }
 
@@ -6048,7 +6049,7 @@ h2.page-head {
     font-weight: 500;
     line-height: 2.2rem;
     padding: 0 0 0 15px;
-    margin: 40px 0 20px 0;
+    margin: 13px 0 20px 0;
 }
 
 .form-group.chm-formgroup.FilterBlue select.form-control.chm-formselect {
@@ -6062,30 +6063,37 @@ h2.page-head {
 .upload-main-wrapper {
     width: 100%;
     display: flex;
-    /* background: #11113a; */
+    background: #11113a;
     padding: 30px;
-    border-radius: 4px;
+    border-radius: 5px;
     box-sizing: border-box;
     min-height: 500px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    /* border: 2px solid #3f4f78; */
 }
 
 .upload-main-wrapper .uploadFile-left {
     min-width: 30%;
-    border-right: 3px solid #3f4f78;
+    border: 3px solid #ffffff;
+    border-radius: 5px;
     width: 30%;
-    min-height: 425px;
+    background-color: #ffffff;
+    border-right: 3px solid #11113a;
+    padding : 0px 20px;
+    /* min-height: 425px; */
 }
 
 .upload-main-wrapper .fileReview-right{
 	min-width:70%;
     width:70%;
+
 }
 
 
 .file-upload {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  /* background-color: #4663ac; */
   width:90%;
   margin: 0 auto;
   padding: 20px;
@@ -6102,7 +6110,7 @@ h2.page-head {
   border-bottom: 4px solid #15824B;
   transition: all .2s ease;
   outline: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 700;
 }
 
@@ -6161,7 +6169,7 @@ h2.page-head {
   font-weight: 100;
   /* text-transform: uppercase; */
   color: #24245c;
-  padding: 60px 0;
+  padding: 60px 20px;
 }
 
 .drag-text:hover h3{

@@ -371,8 +371,9 @@ var aCaseItems = [
     status: "dismissal of suit",
     summary:
       "The appellant owned several estates where tea was grown and was assessed to sales tax for the years 1954-55 and 1955-56.\n The appellant claimed that certain sales of its tea conducted by auction at Fort Cochin, a place then in the Madras State, were sales outside the Travancore Cochin State and therefore exempt from taxation.\n This claim was rejected by the assessing authority, the Appellate Assistant Commissioner, and the Sales Tax Appellate Tribunal. The appellant appealed to the Supreme Court, arguing that the High Court should have called for a reference on the question of the appropriate method of valuation.\n The Supreme Court dismissed the appeal, ruling that the profit-earning method was the appropriate method for valuing shares of a going concern and that the combination of the two methods was not a valid principle of valuation.\n The court also dismissed the Revenue's argument that the break-up method should apply due to a rule in the Gift Tax Act, as the question was not raised before the Tribunal.\n The Supreme Court concluded that the present appeals dependent on the correctness of the meaning of the expression 'outside sales' in article 286(1)(a), which the High Court adopted in A. V. Thomas's case, had to be allowed.\n The court also declined to permit the respondent to argue a point about the property in the goods not having passed at Fort Cochin in the Madras State, as the point was not raised before the High Court.\n The appeals were thus allowed and the order of the High Court reversed.",
-    files: "1771.pdf",
-    email: "abhijeet.kadam@wipro.com",
+    files:
+      "judgement_1771.pdf,Interpretation_of_Goods_and _Commodity-1771.pdf,SalesTax_and_Export_Transactions_1771.pdf",
+    email: "naveen@gmail.com",
     client: "Adarsh TR",
   },
   {
@@ -383,7 +384,8 @@ var aCaseItems = [
     status: "case dismissed",
     summary:
       "The appeal case number 116 of 1964 pertains to the election of Jugal Kishore Patnaik to the Orissa Legislative Assembly from Bhadrak constituency.\n This election was declared void by the Orissa High Court due to an election petition filed by Ratnakar Mohanty. Mohanty claimed that his nomination papers were improperly rejected by the Returning Officer, leading to the invalidation of the election.\n The case reached the Supreme Court of India, which dismissed the appeal and upheld the High Court's decision.\n The Supreme Court emphasized the need for clearer electoral regulations to avoid similar misunderstandings in the future.\nThe court noted that the jurisdiction of civil courts can be excluded by a statutory provision, however, it does not necessarily mean that the plea against the validity of the order passed by the District Magistrate cannot be raised in a civil court.\n The case highlighted the complexities in the electoral law and the need for its reform.",
-    files: "2031.pdf",
+    files:
+      "Judgement_2031.pdf,HighCourtMisinterpretation_Conclusion_2031.pdf,CaseBackground_Contentions_Trial Proceedings_2031.pdf",
     email: "abhijeet.kadam@wipro.com",
     client: "Adarsh TR",
   },
@@ -428,7 +430,7 @@ function DoAuth() {
     aRssHtm = "<span style='color:white;'>Feed Not Available</span>";
   }
   aRssHtm =
-    "<li style='width:50%!important;'> <marquee direction='left' >" +
+    "<li style='width:50%!important; margin-left:30px'> <marquee direction='left' >" +
     aRssHtm +
     "</marquee></li>";
 
