@@ -222,7 +222,10 @@
           "NOV",
           "DEC",
         ];
+        const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var a = 0;
         for (var i = 1; i <= 30; i++) {
+          a++;
           var aCurDate = addDays(new Date(), i - 1);
           var aDD = "0" + aCurDate.getDate() + "";
           var aFDate =
@@ -232,18 +235,19 @@
             " " +
             (aCurDate.getFullYear() + "").substr(2);
 
-          if (i % 10 == 1) {
+          if (a % 10 == 1) {
             aCalHtml +=
               "</div></div></div><div class='item'><div class='calendar-inn-section'><div>";
 
             aitemCount++;
-          } else if (i % 5 == 1) {
+          } else if (a % 5 == 1) {
             aCalHtml += "</div>&nbsp;&nbsp;<div>";
 
             aitemCount++;
           }
           var aEvt = {};
           var aIsMatrch = false;
+          var aDay = weekday[aCurDate.getDay()];
           $.each(aStatusChartAr, function (i, aEv) {
             console.log(aEv.date);
             console.log(aFDate);
@@ -272,7 +276,9 @@
                 "<div class='DayView-Inn'>" +
                 "<div class='casedate'><h6>" +
                 aEv.date +
-                "</h6></div>" +
+                "<span>" +
+                aDay +
+                "</span></h6></div>" +
                 "<div class='casenote'><p><span><i class='fa fa-gavel' aria-hidden='true'></i></span><strong>Case " +
                 aEv.case +
                 "</strong></p> <p><span class='pl-2'> <i class='fa fa-hourglass' aria-hidden='true'></i></span>" +
@@ -294,17 +300,23 @@
             }
           });
           if (aIsMatrch == false) {
-            aCalHtml +=
-              "<div class='calendar-child'>" +
-              "<div class='day-view-case'>" +
-              "<div class='DayView-Inn'>" +
-              "<div class='casedate'><h6>" +
-              aFDate +
-              "</h6></div>" +
-              "<div class='casenote'><p><strong>No Events</strong></p></div>" +
-              "</div>" +
-              "</div>" +
-              "</div>";
+            if (aDay == "SUN" || aDay == "SAT") {
+              a--;
+            } else {
+              aCalHtml +=
+                "<div class='calendar-child'>" +
+                "<div class='day-view-case'>" +
+                "<div class='DayView-Inn'>" +
+                "<div class='casedate'><h6>" +
+                aFDate +
+                "<span>" +
+                aDay +
+                "</span></h6></div>" +
+                "<div class='casenote'><p><strong>No Events</strong></p></div>" +
+                "</div>" +
+                "</div>" +
+                "</div>";
+            }
           } else {
             aIsMatrch = false;
           }
