@@ -476,10 +476,10 @@
           contentType: "application/x-www-form-urlencoded",
           data: "",
         }).done(function (response) {
-          console.log(response.response);
+          console.log(response);
           var aMsg = { name: "Agent", msg: response.response }; // add this line
           MsgArr.push(aMsg);
-          console.log(response.response);
+          console.log(response);
           // add this line
           SetChatHistory(); // add this line
         });

@@ -6026,6 +6026,7 @@ justify-content: center; border-radius: 2px; margin-right: 5px; font-size: 13.5p
     height: 30px;
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
     box-sizing: border-box;
     border-radius: 3px;
     padding: 5px 10px;

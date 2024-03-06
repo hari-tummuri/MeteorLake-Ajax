@@ -169,7 +169,7 @@
 
         <main class="body-wrapper">
           <div class="content-wrapper right-main-containr">
-            <h2 class="page-head">Summary</h2>
+            <h2 class="page-head">Summary Generator</h2>
             <div class="main-data-hold">
               <div class="app-main-wrapper">
                 <div class="inn-main-hold">
@@ -454,19 +454,14 @@
 
         $.ajax({
           url: "http://127.0.0.1:4000/summary",
-          // url: "https://dummy.restapiexample.com/api/v1/create",
           type: "POST",
           data: formData,
-
-          // data: { name: "test", salary: "123", age: "23" },
-          processData: false, // tell jQuery not to process the data
+          processData: false,
           contentType: false,
           success: function (data) {
             console.log("Upload successful!");
-            console.log(data);
             $("#summary").removeClass("d-flex");
             $("#summary").hide();
-
             $("#divSummary").show();
             $("#divSummary p").html(data);
           },
