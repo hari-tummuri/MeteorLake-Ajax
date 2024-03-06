@@ -87,7 +87,7 @@
                 title="Legal Research Assistant"
                 class="logo-main"
               />
-              <img
+<img
                 src="images/wipro-logo.png"
                 alt="Wipro"
                 title="Wipro"
@@ -101,7 +101,7 @@
               />
               <h3 class="text-white mb-0">
                 Legal Research Assistant<sub
-                  style="font-size: 1rem; margin-left: 10px"
+                  style="font-size: 0.8rem; margin-left: 10px"
                   >Powered by Intel® Core™ Ultra Processor</sub
                 >
               </h3>
@@ -416,10 +416,7 @@
             </div>
             <footer class="tne-app-footer">
               <div class="footer-custom d-flex justify-content-center">
-                <p style="margin-right: 20%">
-                  &copy; 2024 Wipro Ltd. All rights reserved.
-                </p>
-                <p style="margin-left: 5%">Powered by Generative AI</p>
+                <p>&copy; 2024 Wipro Ltd. All rights reserved.</p>
                 <!-- 2024 Wipro Ltd, Inc -->
                 <!-- <p><span class="mr-2">WIPRO Legal Research Assistant</span></p> -->
               </div>
@@ -441,19 +438,13 @@
       function uploadFile() {
         var fileInput = document.getElementById("pdfFile");
         var file = fileInput.files[0];
-        console.log(file);
-        fileName = file.name;
-        document.getElementById("fileName").innerText = fileName;
+        document.getElementById("fileName").innerText = file.name;
         var formData = new FormData();
-        formData.append("pdfFile", file);
-        // alert("file uploaded");
-        console.log(formData);
-
+        formData.append("file", file, {
+          contentType: "application/pdf",
+        });
         $("#summary").show();
         $("#summary").addClass("d-flex");
-        // var id = document.getElementById("summary");
-        // id.classList.remove("d-none");
-        // id.classList.add("d-flex");
 
         $.ajax({
           url: "http://127.0.0.1:4000/summary",
