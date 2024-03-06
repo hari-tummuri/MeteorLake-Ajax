@@ -401,7 +401,7 @@
 
             <h2 style="text-align: center">Meteor Lake Client Platform</h2>
 
-            <div class="d-flex justify-content-center">
+            <!-- <div class="d-flex justify-content-center">
               <div
                 class="table-container"
                 style="align-items: center; display: flex"
@@ -708,8 +708,317 @@
                   </tbody>
                 </table>
               </div>
-            </div>
+            </div> -->
 
+            <div class="d-flex justify-content-center">
+              <div
+                class="table-container"
+                style="align-items: center; display: flex"
+              >
+                <style>
+                  td,
+                  tr {
+                    color: #87878d;
+                  }
+                </style>
+                <table style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th
+                        colspan="2"
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: center;
+                          background-color: #f2f2f2;
+                          color: #000000;
+                        "
+                      >
+                        Models Specifications
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Chat
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        openvino-llm-chatbot-rag\Llama-2-7b-chat-hf\INT4
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Summary
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Falconsai/text_summarization
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Chat Embedding
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        jinaai-text-embeddings-v2-base
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Vector Store
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        ChromaDB
+                      </td>
+                    </tr>
+                    <tr>
+                      <th
+                        colspan="2"
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: center;
+                          background-color: #f2f2f2;
+                          color: #000000;
+                        "
+                      >
+                        Performance Metrics
+                      </th>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Input token size
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        9 token
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Output token size
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        39 token
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Tokenization Time
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        32.42 ms
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Detokenization Time
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        30.30 ms
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Generation Time
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        35.46 s
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Latency
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        830.97 ms/token
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        First token latency
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        13662.12 ms/token
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        First infer latency
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        13662.05 ms/infer
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        Tokenization Time
+                      </td>
+                      <td
+                        style="
+                          border: 1px solid black;
+                          padding: 8px;
+                          text-align: left;
+                        "
+                      >
+                        32.42 ms
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            has context menu has context menu
             <div class="mb-5">
               <br />
               <hr />
