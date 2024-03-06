@@ -5880,6 +5880,8 @@ justify-content: center; border-radius: 2px; margin-right: 5px; font-size: 13.5p
 .cases-status-wrapper .cases-hold {
     width: 100%;
     /* background: #11113a; */
+    /* background-image: linear-gradient(to right, #0e0e6e, #1c1c43); */
+    /* background-image: linear-gradient(to right, #1a1a96, #1c1c43); */
     background-image: linear-gradient(to right, #0e0e6e, #1c1c43);
     padding:20px;
     box-sizing: border-box;
@@ -5980,8 +5982,12 @@ justify-content: center; border-radius: 2px; margin-right: 5px; font-size: 13.5p
 
 }
 
+/* .calendar-inn-section div{
+  width: 48% !important;
+} */
+
 .calendar-wrapper-hold .calendar-inn-section .calendar-child {
-    width: 48%;
+    width: 100%;
     margin-right: 1%;
     margin-bottom: 1%;
 }
@@ -6022,7 +6028,8 @@ justify-content: center; border-radius: 2px; margin-right: 5px; font-size: 13.5p
 
 .DayView-Inn .casenote {
     background: rgba(256,256,256, 0.6);
-    width: calc(100% - 100px);
+    /* width: calc(100% - 100px); */
+    width: 293px;
     height: 30px;
     display: inline-flex;
     align-items: center;

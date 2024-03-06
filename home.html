@@ -81,6 +81,7 @@
     <script src="js/common.js"></script>
 
     <script>
+      aitemCount = 0;
       function AddDays(days) {
         var date = new Date();
         console.log(date);
@@ -164,7 +165,8 @@
         $("#tblCase").html(aHtmlStr);
 
         //get events
-        var aCalHtml = "<div class='item'><div class='calendar-inn-section'>";
+        var aCalHtml =
+          "<div class='item'><div class='calendar-inn-section'><div>";
         var aCount = 0;
         var aTodayCase = "";
         var aUpcCase = "";
@@ -232,8 +234,13 @@
 
           if (i % 10 == 1) {
             aCalHtml +=
-              "</div></div><div class='item'><div class='calendar-inn-section'>";
-            // aitemCount++;
+              "</div></div></div><div class='item'><div class='calendar-inn-section'><div>";
+
+            aitemCount++;
+          } else if (i % 5 == 1) {
+            aCalHtml += "</div>&nbsp;&nbsp;<div>";
+
+            aitemCount++;
           }
           var aEvt = {};
           var aIsMatrch = false;
@@ -373,7 +380,7 @@
               />
               <h3 class="text-white mb-0">
                 Legal Research Assistant<sub
-                  style="font-size: 0.8rem; margin-left: 10px"
+                  style="font-size: 1rem; margin-left: 10px"
                   >Powered by Intel® Core™ Ultra Processor</sub
                 >
               </h3>
@@ -796,7 +803,10 @@
             </div>
             <footer class="tne-app-footer">
               <div class="footer-custom d-flex justify-content-center">
-                <p>&copy; 2024 Wipro Ltd. All rights reserved.</p>
+                <p style="margin-right: 20%">
+                  &copy; 2024 Wipro Ltd. All rights reserved.
+                </p>
+                <p style="margin-left: 5%">Powered by Generative AI</p>
                 <!-- 2024 Wipro Ltd, Inc -->
                 <!-- <p><span class="mr-2">WIPRO Legal Research Assistant</span></p> -->
               </div>

@@ -74,6 +74,7 @@ var aEvents = [
     datestr: "05 MAR 24",
     day: "TUE",
   },
+
   {
     caseNo: "5871",
     date: "06-03-2024",
@@ -122,14 +123,7 @@ var aEvents = [
     datestr: "06 MAR 24",
     day: "WED",
   },
-  {
-    caseNo: "6991",
-    date: "05-03-2024",
-    startTime: "10:00 AM",
-    endTime: "11:00 AM",
-    datestr: "05 MAR 24",
-    day: "TUE",
-  },
+
   {
     caseNo: "1024",
     date: "07-03-2024",
@@ -213,10 +207,10 @@ var aEvents = [
   },
   {
     caseNo: "6991",
-    date: "07-03-2024",
+    date: "17-03-2024",
     startTime: "10:00 AM",
     endTime: "11:00 AM",
-    datestr: "07 MAR 24",
+    datestr: "17 MAR 24",
     day: "SAT",
   },
   {
