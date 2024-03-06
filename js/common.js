@@ -409,7 +409,7 @@ function DoAuth() {
     aRssHtm = "<span style='color:white;'>Feed Not Available</span>";
   }
   aRssHtm =
-    "<li style='width:50%!important; margin-left:30px'> <marquee direction='left' >" +
+    "<li style='width:40%!important; margin-left:30px'> <marquee direction='left' >" +
     aRssHtm +
     "</marquee></li>";
 
