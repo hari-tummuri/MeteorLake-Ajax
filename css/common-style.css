@@ -6063,7 +6063,8 @@ h2.page-head {
 .upload-main-wrapper {
     width: 100%;
     display: flex;
-    background: #11113a;
+    /* background: #11113a; */
+    background-image: linear-gradient(to right, #0e0e6e, #1c1c43);
     padding: 30px;
     border-radius: 5px;
     box-sizing: border-box;
@@ -6074,14 +6075,15 @@ h2.page-head {
 }
 
 .upload-main-wrapper .uploadFile-left {
-    min-width: 30%;
-    border: 3px solid #ffffff;
-    border-radius: 5px;
-    width: 30%;
-    background-color: #ffffff;
-    border-right: 3px solid #11113a;
-    padding : 0px 20px;
-    /* min-height: 425px; */
+  min-width: 30%;
+  border-right: 3px solid #ffffff;
+  /* border-radius: 5px; */
+  width: 30%;
+  /* background-color: #ffffff; */
+  /* background-image: linear-gradient(to right, #0e0e6e, #1c1c43); */
+  /* border-right: 3px solid #11113a; */
+  padding : 0px 20px;
+  /* min-height: 425px; */
 }
 
 .upload-main-wrapper .fileReview-right{
@@ -6092,7 +6094,7 @@ h2.page-head {
 
 
 .file-upload {
-  /* background-color: #ffffff; */
+  background-color: #ffffff;
   /* background-color: #4663ac; */
   width:90%;
   margin: 0 auto;
@@ -6542,3 +6544,6 @@ h2.page-head {
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
+
+
+

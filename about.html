@@ -225,7 +225,7 @@
         <main class="body-wrapper">
           <div
             class="parent-container"
-            style="width: 79%; margin-left: auto; margin-right: auto"
+            style="width: 65%; margin-left: auto; margin-right: auto"
           >
             <div class="content-wrapper">
               <div class="box1" style="margin-top: 1%">
@@ -242,43 +242,43 @@
               </div>
             </div>
 
-            <div class="marquee-container">
-              <marquee behavior="scroll" direction="right">
+            <div class="marquee-container" id="eventCalendar">
+              <div>
                 <img
                   class="marquee-img"
-                  src="images/restime.gif"
+                  src="images/restime.png"
                   alt="Image 1"
-                  style="width: 250px; height: auto"
+                  style="width: 230px; height: auto"
                 />
                 <img
                   class="marquee-img"
                   src="images/docs.png"
                   alt="Image 2"
-                  style="width: 250px; height: auto"
+                  style="width: 230px; height: auto"
                 />
                 <img
                   class="marquee-img"
                   src="images/bot.png"
                   alt="Image 3"
-                  style="width: 250px; height: auto"
+                  style="width: 230px; height: auto"
                 />
                 <img
                   class="marquee-img"
-                  src="images/Schedule.gif"
+                  src="images/schedule.png"
                   alt="Image 4"
-                  style="width: 250px; height: auto"
+                  style="width: 130px; height: auto; margin-left: 5%"
                 />
-              </marquee>
+              </div>
             </div>
 
-            <div class="container" id="eventCalendar">
+            <div class="container">
               <div class="row">
                 <div class="col-sm-3">
                   <img
-                    src="images/calendar.gif"
+                    src="images/calendar.png"
                     alt="Event"
                     style="
-                      max-width: 100%;
+                      max-width: 70%;
                       border-radius: 10%;
                       border: 2px solid #ffffff;
                     "
@@ -287,23 +287,50 @@
                 <div class="col-sm-9">
                   <p style="text-align: justify; color: #87878d">
                     Our platform is designed with a user-friendly interface
-                    where lawyers have access to a personalized homepage. This
-                    homepage provides comprehensive details about their
-                    professional profile, including the status of their cases -
-                    won, lost, or in-progress. Additionally, an integrated event
-                    calendar keeps you updated with all your upcoming events.
+                    where lawyers have access to a personalized My Hub. My Hub
+                    provides a calendar which indicates the schedule of the
+                    lawyer and also contains the details of the cases related to
+                    what he handles and helping the lawyer to drastically reduce
+                    research time.
+                  </p>
+
+                  <p style="text-align: justify; color: #87878d">
+                    Legal Cases Page consist of detailed table related to cases
+                    which the lawyer handles and allows to filter and sort the
+                    case details in different permutations and combinations..
+                    When the lawyer clicks on the document number , it takes to
+                    another screen which enables chat with the document, which
+                    functions based on cutting edge retrieval augmented
+                    generation technology powered by powerful LLM models. Cherry
+                    on the cake, the lawyer can view the summary of the document
+                    just by a single click.
+                  </p>
+
+                  <p style="text-align: justify; color: #87878d">
+                    Profile page consist of key personal details of lawyer and a
+                    chart which shows the career track record like cases won ,
+                    lost and the cases in progress helping the particular lawyer
+                    to keep track of the career path.
                   </p>
                 </div>
               </div>
             </div>
 
             <p style="text-align: justify; color: #87878d">
-              One of our unique features is the Workspace page. Here, you can
-              access a list of documents relevant to a particular case with just
-              a simple click on the case number from the homepage. The Workspace
-              page is your personal interactive space where you can select any
-              document from the list to gain insights.
+              One of our unique features is the Legal Answer Engine page. Here,
+              you can access a list of documents relevant to a particular case
+              with just a simple click on the case number from the My Hub Page
+              or Legal Cases Page. The Legal Answer Engine is your personal
+              interactive space where you can select any document from the list
+              to gain insights. This page is generally used by lawyers to get
+              the crux of the long document. Instead of wasting time reading
+              lengthy documents, with this LLM powered tool, just by few clicks
+              to upload the document, the lawyer can attain key takeaways from
+              the document, increasing his productivity.
             </p>
+
+            <br />
+            <hr />
 
             <div
               class="icon-container"
@@ -313,9 +340,8 @@
                 justify-content: space-between;
                 position: absolute;
                 left: 0;
-                top: 10%;
+                top: 18%;
                 padding: 20px;
-                margin-top: 58px;
               "
             >
               <img
@@ -352,7 +378,7 @@
               />
             </div>
 
-            <div class="col-12 text-center">
+            <div class="col-12 text-center" id="metrics">
               <img
                 src="images/specs.png"
                 class="img-fluid"
@@ -362,7 +388,7 @@
             <div class="mb-5"></div>
 
             <div>
-              <h2 id="metrics" style="text-align: center; color: black">
+              <h2 style="text-align: center; color: black">
                 Now, let's delve deeper into the key features of our Assistant
               </h2>
             </div>
@@ -678,7 +704,10 @@
               </div>
             </div>
 
-            <div class="mb-5"></div>
+            <div class="mb-5">
+              <br />
+              <hr />
+            </div>
 
             <div class="container" id="chatWithAssistant">
               <div class="row">
@@ -713,10 +742,10 @@
                 </div>
                 <div class="col-sm-3">
                   <img
-                    src="images/convo.gif"
+                    src="images/convo.png"
                     alt="Event"
                     style="
-                      max-width: 100%;
+                      max-width: 130%;
                       border-radius: 10%;
                       border: 2px solid #ffffff;
                     "
@@ -731,10 +760,10 @@
               <div class="row">
                 <div class="col-sm-3">
                   <img
-                    src="images/docs2.gif"
+                    src="images/docs2.png"
                     alt="Event"
                     style="
-                      max-width: 100%;
+                      max-width: 90%;
                       border-radius: 10%;
                       border: 2px solid #ffffff;
                     "
