@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-logo {width:auto; height:50px;}
 
-.logo-parent{width:90px; height:43px; margin-left:30px;}
+.logo-parent{width:90px; height:43px; }
 
 
 .table {margin-bottom: 0px !important;}
@@ -262,7 +262,7 @@ footer.tne-app-footer .footer-custom p span{font-weight:500;}
     background-image: linear-gradient(to right, #2c2c78 , #1c1c43);
 }
 
-.logo-account-hold .left-app-logo{width:60%; padding:3px 0 0 0; height: 70%;}
+.logo-account-hold .left-app-logo{width:60%; padding:3px 0 0 0; height: 70%; font-weight: ;}
 .logo-account-hold .right-app-account{width:40%; display:flex; justify-content:flex-end; align-items:center;}
 .logo-account-hold .right-app-account .notify-hold.user-hold {
     width:auto;

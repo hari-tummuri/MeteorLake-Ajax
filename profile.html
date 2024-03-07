@@ -32,6 +32,15 @@
 		<script src="https://code.highcharts.com/modules/export-data.js"></script>
 		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css"
+    />
+
 		<style>
 			.profile-hold {
 			width: 100%;
@@ -90,52 +99,81 @@
 		<div class="app-container">
 
 			<header class="header-fixed nav-bar-head">
-				<div class="logo-account-hold" style="height: 70%">
-					<div class="left-app-logo d-flex align-items-center">
-						<!-- <img src="images/logo-application.png" alt="Legal Research Assistant" title="Legal Research Assistant" class="logo-main" />
-						<img src="images/wipro-logo.png" alt="Wipro" title="Wipro" class="logo-parent" /> -->
+        <div class="logo-account-hold" style="height: 70%">
+          <div class="left-app-logo d-flex align-items-center">
+            <!-- <img
+              src="images/logo-application.png"
+              alt="Legal Research Assistant"
+              title="Legal Research Assistant"
+              class="logo-main"
+            /> -->
             <img
-                src="images/Wipro_Logo_Secondary_White_Digital.png"
-                alt="Wipro"
-                title="Wipro"
-                class="logo-parent ml-0 mr-2"
-                style="margin-left : 0px; margin-right: 0.5rem;"
-              />
-              <h4 class="text-white mb-0">Legal Research Assistant<sub style="font-size:1rem;margin-left: 10px">Powered by Intel® Core™ Ultra Processor</sub></h4>
-					</div>
-					<div class="right-app-account">
-						<div class="notify-hold user-hold">
-							<div class="user-sec">
-								<div class="account-right">
-									<ul>
-										<li>
-											<ul id="menu-log">
-												<li>
-													<input id="check01" type="checkbox" name="menu">
-													<label for="check01"><span class="uname-dp">AB</span>Aditya Bhuvan</label>
-													<ul class="submenu">
-														<li><div class="submenu-dp">AB</div></li>
-														<li><a href="profile.html"><span><i class="fa fa-user" aria-hidden="true"></i></span>My Profile</a></li>
-														<li><a href="login.html"><span><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logout</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div><!-- right-app-account -->
-				</div><!-- logo-account-hold -->
-				<div class="main-menu-section">
-					<ul class="nav-dark">
-						<li><a href="home.html" >My Hub</a></li>
-						<li><a href="dashboard.html">Legal Cases</a></li>
-						<li><a href="summary.html">Legal answer engine</a></li>
+              src="images/Wipro_Logo_Secondary_White_Digital.png"
+              alt="Wipro"
+              title="Wipro"
+              class="logo-parent ml-0 mr-2"
+            />
+            <h3 class="text-white mb-0" >
+              Legal Research Assistant<span
+                style="font-size: 1.2rem; margin-left: 10px"
+                >Powered by Intel® Core™ Ultra Processor</span>
+            </h3>
+          </div>
+          <div class="right-app-account">
+            <div class="notify-hold user-hold">
+              <div class="user-sec">
+                <div class="account-right">
+                  <ul>
+                    <li>
+                      <ul id="menu-log">
+                        <li>
+                          <input id="check01" type="checkbox" name="menu" />
+                          <label for="check01">
+                            <!-- <span class="uname-dp">AB</span> -->
+                          </label>
+                          <ul class="submenu">
+                            <li><div class="submenu-dp">AB</div></li>
+                            <li>
+                              <a href="profile.html"
+                                ><span
+                                  ><i
+                                    class="fa fa-user"
+                                    aria-hidden="true"
+                                  ></i></span
+                                >My Profile</a
+                              >
+                            </li>
+                            <li>
+                              <a href="login.html"
+                                ><span
+                                  ><i
+                                    class="fa fa-sign-out"
+                                    aria-hidden="true"
+                                  ></i></span
+                                >Logout</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- right-app-account -->
+        </div>
+        <!-- logo-account-hold -->
+        <div class="main-menu-section">
+          <ul class="nav-dark">
+            <li><a href="home.html" class="active">My Hub</a></li>
+            <li><a href="dashboard.html">Legal Cases</a></li>
+            <li><a href="summary.html">Legal Insight Engine</a></li>
             <li><a href="about.html">About</a></li>
-					</ul>
-				</div>
-			</header>
+          </ul>
+        </div>
+      </header>
 			<main class="body-wrapper">
 				<div class="content-wrapper right-main-containr">
 					<h2 class="page-head">Profile</h2>
@@ -182,12 +220,12 @@
 			</main>
 
 
-			<footer class="tne-app-footer">
-        <div class="footer-custom d-flex justify-content-center">
+			<footer class="tne-app-footer" >
+        <div class="footer-custom d-flex justify-content-between" style="margin-left: 10%; margin-right:10%; font-size:1.1rem;">
           <p style="margin-right: 20%">
             &copy; 2024 Wipro Ltd. All rights reserved.
           </p>
-          <p style="margin-left: 5%">Powered by Generative AI</p>
+          <p style="margin-left: 5%;">Powered by Generative AI</p>
           <!-- 2024 Wipro Ltd, Inc -->
           <!-- <p><span class="mr-2">WIPRO Legal Research Assistant</span></p> -->
         </div>
