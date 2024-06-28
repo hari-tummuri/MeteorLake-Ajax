@@ -4,7 +4,7 @@
     password: "Demo123",
     profileName: "Naveen",
     profileimage:
-      "https://media.licdn.com/dms/image/C4E03AQErNeIsqNvsmA/profile-displayphoto-shrink_800_800/0/1626780671355?e=2147483647&v=beta&t=kDF_HBtmb1RKMgnwak2-p8HNiU2dBe1wd2di_Y3-QFE",
+      "https://img.freepik.com/premium-photo/indian-business-man-black-suit-white-background_862994-279245.jpg",
     won: 50,
     loss: 10,
     inProgress: 7,
